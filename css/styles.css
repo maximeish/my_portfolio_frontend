@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    height: 15vh;
+    border: 2px solid red;
+    border-bottom: 2px solid rgb(202, 202, 202);
+}
+
+.navbar > .logo, .nav-links {
+    flex: 1;
+}
+
+.navbar > .logo {
+    height: 40%;
+    align-self: center;
+    flex-basis: 10%;
+}
+
+.navbar > ul {
+    flex-basis: 90%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-right: 6em;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: large;
+}
+
+.main-section {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid blue; */
+}
+
+.main-section .large-header {
+    padding-top: 2em;
+    font-weight: bold;
+    font-size: 3em;
+    letter-spacing: 1px;
+    opacity: .8;
+}
+
+.main-section .description {
+    text-align: center;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    font-size: x-large;
+    padding-bottom: 1.5em;
+    line-height: 1.4em;
+}
+
+.profile {
+    height: 40%;
+    margin-bottom: 0.9em;
+    /* border: 2px solid red; */
+}
+
+.main-section .profile > img {
+    /* border: 2px solid green; */
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
