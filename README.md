@@ -1,2 +1,2 @@
 # mybrand-maxime
-A repository for my brand website
+A repository for my brand website and production branch
