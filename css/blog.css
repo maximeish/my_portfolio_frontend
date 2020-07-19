@@ -1,0 +1,81 @@
+
+.main-section {
+    height: 70vh;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main-section div:first-child > h1 {
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin-bottom: 0.5em;
+}
+
+.main-section div:first-child > p {
+    font-size: larger;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.links-container > a {
+    text-align: center;
+    display: block;
+    flex: 1;
+}
+
+.or-txt {
+    text-align: center;
+    display: block;
+    flex: 1;
+}
+
+.links-container {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-btn {
+    font-size: xx-large;
+    text-decoration: none;
+    color: #030390;
+    padding: .5em;
+    font-weight:bold;
+}
+
+.login-btn {
+    font-size: x-large;
+    text-decoration: none;
+    color: #030390;
+    padding: .5em;
+    border: 1px solid rgb(1, 1, 92);
+    border-width: medium;
+    border-radius: 10px;
+}
+
+
+.footer {
+    height: 15vh;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #1B1B2F;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fefefe;
+    font-size: x-large;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #fefefe;
+    border-width: thick;
+}
+
+.footer div:last-child {
+    font-size: large;
+    opacity: 0.6;
+    color: #fefefe;
+}
