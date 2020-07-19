@@ -1,2 +1,2 @@
 # mybrand-maxime
-A repository for my brand website and production branch
+A branch for the mockup designs of my brand website
