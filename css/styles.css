@@ -16,7 +16,6 @@
     display: flex;
     justify-content: space-around;
     height: 15vh;
-    border: 2px solid red;
     border-bottom: 2px solid rgb(202, 202, 202);
 }
 
