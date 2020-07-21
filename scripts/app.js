@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links li');
     const nav = document.querySelector('.navbar');
     const navLinksTxt = document.querySelectorAll('.nav-link');
-
+    
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
         navbar.classList.toggle('navbar-inactive');

@@ -79,3 +79,42 @@
     opacity: 0.6;
     color: #fefefe;
 }
+
+@media (max-width: 985px) {
+    .main-section {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .main-section div:first-child > h1 {
+        text-align: center;
+    }
+
+    .main-section div:first-child > p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 715px) {
+    .main-section div:first-child > p {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .main-section div:first-child > h1 {
+        font-size: xx-large;
+    }
+
+    .main-section div:first-child > p br {
+        display: none;
+    }
+
+    .links-container {
+        width: 70%;
+        flex-direction: column;
+    }
+
+    .links-container > .or-txt {
+        margin-bottom: 20px;
+    }
+}
