@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.signup-wrapper > div a {
+    text-decoration: none;
+}
+
 .signup-form {
     width: 100%;
     display: flex;
