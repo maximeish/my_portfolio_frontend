@@ -4,10 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links li');
     const nav = document.querySelector('.navbar');
     const navLinksTxt = document.querySelectorAll('.nav-link');
+    const body = document.querySelector('body');
+
 
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
-        navbar.classList.toggle('navbar-inactive');
+        navbar.classList.toggle('navbar-inactive');    
+        body.classList.toggle('hidden-overflow');
         
         //change some coloring
         navbar.classList.toggle('darken-background');

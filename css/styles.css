@@ -206,6 +206,10 @@
     transform: translateX(100%);
 }
 
+.hidden-overflow {
+    overflow-y: hidden;
+}
+
 .darken-background {
     background: rgb(192, 145, 212) !important;
 }
