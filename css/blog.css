@@ -1,6 +1,6 @@
 
 .main-section {
-    height: 70vh;
+    /* height: 70vh; */
     flex-direction: row;
     justify-content: space-around;
 }
@@ -93,6 +93,10 @@
     .main-section div:first-child > p {
         text-align: center;
     }
+
+    .or-txt {
+        margin-right: 20px;
+    }
 }
 
 @media (max-width: 715px) {
@@ -102,7 +106,7 @@
     }
 
     .main-section div:first-child > h1 {
-        font-size: xx-large;
+        font-size: x-large;
     }
 
     .main-section div:first-child > p br {
