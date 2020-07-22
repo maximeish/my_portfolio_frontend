@@ -48,6 +48,7 @@
 }
 
 .login-form button {
+    margin: 25px 0 30px 0;
     outline: none;
     font-size: x-large;
     color: #F9F9F9;
@@ -75,4 +76,38 @@
 
 .login-wrapper a:hover {
     color: #6860d4;
+}
+
+@media (max-width: 1060px) {
+    .login-wrapper {
+        width: 60%;
+    }
+}
+
+@media (max-width: 665px) {
+    .login-wrapper {
+        width: 65%;
+    }
+}
+
+@media (max-width: 500px) {
+    .login-wrapper {
+        width: 85%;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-wrapper {
+        height: 100vh;
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    .login-wrapper p {
+        font-size: medium;
+    }
+
+    .login-form input {
+        font-size: large;
+    }
 }
