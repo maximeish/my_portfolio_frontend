@@ -1,20 +1,102 @@
-
 .main-section {
-    /* height: 70vh; */
+    height: auto;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 50px 0;
+    /* border: 5px solid red; */
+}
+
+.main-section .blog-column:first-child {
+    /* border: 10px solid lightblue; */
+    flex-basis: 60%;
+}
+
+.main-section .blog-column:last-child {
+    flex-basis: 30%;
 }
 
 .main-section div:first-child > h1 {
-    font-size: 3em;
+    width: 90%;
+    opacity: 0.8;
+    font-size: 2.5em;
     letter-spacing: 2px;
-    margin-bottom: 0.5em;
+    margin: 0 auto .5em auto;
 }
 
 .main-section div:first-child > p {
+    width: 90%;
+    margin: 0 auto;
     font-size: larger;
     letter-spacing: 1px;
     opacity: 0.8;
+}
+
+.link-header {
+    text-decoration: none;
+    color: rgb(39, 49, 71);
+    transition: all 0.3s ease-in-out;
+}
+
+.link-header:hover {
+    color: rgb(118, 118, 231);
+}
+
+.posts-wrapper > h2 {
+    font-weight: lighter;
+    width: 90%;
+    opacity: 0.7;
+    margin: 50px auto 25px auto;
+    letter-spacing: 2px;
+}
+
+.post {
+    width: 90%;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all .3s ease-in-out;
+}
+
+.post:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.post > h2 {
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.post > span {
+    display: block;
+    margin: 15px 0;
+    opacity: 0.5;
+    font-size: small;
+}
+
+.post > p {
+    font-size: large;
+    letter-spacing: 1px;
+}
+
+.post > a {
+    outline: none;
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid rgb(102, 102, 168);
+    width: fit-content;
+    border-radius: 30px;
+    border-width: thin;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 1px 1px 3px rgb(153, 153, 153);
+    letter-spacing: 1px;
+}
+
+.post > a:hover {
+    background: rgb(136, 107, 216);
+    color: white;
 }
 
 .links-container > a {
@@ -37,21 +119,39 @@
 }
 
 .signup-btn {
-    font-size: xx-large;
-    text-decoration: none;
-    color: #030390;
-    padding: .5em;
-    font-weight:bold;
-}
-
-.login-btn {
+    word-spacing: 3px;
     font-size: x-large;
     text-decoration: none;
     color: #030390;
     padding: .5em;
-    border: 1px solid rgb(1, 1, 92);
-    border-width: medium;
+    font-weight:bold;
+    border: 1px solid white;
+    transition: all 0.5s ease-in-out;
     border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.signup-btn:hover {
+    border-color: rgb(1, 1, 92);
+}
+
+.login-btn {
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    font-size: x-large;
+    text-decoration: none;
+    color: #030390;
+    padding: .5em 1em;
+    border: 1px solid rgb(1, 1, 92);
+    border-width: thin;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    color: rgb(248, 248, 248);
+    background: rgb(136, 107, 216);
+    border-color: white;
 }
 
 
@@ -119,6 +219,6 @@
     }
 
     .links-container > .or-txt {
-        margin-bottom: 20px;
+        margin: 20px auto;
     }
 }
