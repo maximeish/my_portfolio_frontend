@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxime's Blog</title>
+    <title>Contact Me</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../scripts/app.js"></script>
 </head>
 <body>
@@ -24,46 +25,51 @@
             </div>
         </nav>
         <section class="main-section">
-            <div class="blog-column">
-                <h1>Welcome to My Blog!</h1>
+            <div class="form-section">
+                <div>
+                    <h1>Interested in working together?</h1>
 
-                <p>to view and comment on all my posts, it’s as simply as <a href="./login.html" class="link-header">logging in</a> if
-                    you’ve created an account before, or click <a href="./signup.html" class="link-header">Sign Up</a> to create one</p>
+                    <p>Let's talk...</p>
+                    
+                    <form class="form-wrapper">
+                        <div class="name-field">
+                            <label for="name">Full names</label>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        
+                        <div class="email-field">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="phone-field">
+                            <label for="phone">Telephone<span class="text-muted">(with country code)</span></label>
+                            <input type="tel" name="phone" id="phone" />
+                        </div>
+
+                        <div class="message-field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
                 
-                <div class="posts-wrapper">
-                    <h2>Here are some of my posts...</h2>
-                    <div class="post">
-                        <h2>Introduction to ReactJS</h2>
-                        <span>Posted on May 20<sup>th</sup>, 2020 by Maxime I.</span>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam exercitation...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                    <div class="post">
-                        <h2>Git and Github best practices</h2>
-                        <span>Posted on Feb 10<sup>th</sup>, 2020 by Maxime I.</span>
-                        <p>Ipsum minima et, dolores nisi eos dicta in voluptatem quod aperiam laborum impedit, alias fugit earum dolorum! Aspernatur, unde. Rem, numquam animi...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                    <div class="post">
-                        <h2>A Dive into the basics of Linux</h2>
-                        <span>Posted on Dec 10<sup>th</sup>, 2019 by Maxime I.</span>
-                        <p>Aliquam harum quidem dolore voluptate, possimus rem quis delectus pariatur culpa molestias est soluta consequatur? Laborum ex cupiditate cumque labore non voluptatem...</p>
-                        <a href="#">Read more</a>
-                    </div>
+                <div class="links-section">
+                    <div><a href="https://"><i class="fa fa-twitter"></i></a></div>
+                    <div><a href="https://"><i class="fa fa-linkedin"></i></a></div>
+                    <div><a href="https://"><i class="fa fa-envelope"></i></a></div>
+                    <div><a href="https://"><i class="fa fa-facebook"></i></a></div>
+                    <div><a href="https://"><i class="fa fa-whatsapp"></i></a></div>
+                    <div><a href="https://"><i class="fa fa-phone"></i></a></div>
                 </div>
             </div>
-            
-            <div class="links-container blog-column">
-                <a class="signup-btn" href="./signup.html">Sign&nbsp;up</a>
-                <span class="or-txt">or</span>
-                <a class="login-btn" href="./login.html">Log&nbsp;in</a>
+
+            <div class="about-me">
+                
             </div>
         </section>
-
-        <footer class="footer">
-            <div><a href="#">About Me</a></div>
-            <div><span class="copyright">COPYRIGHT &copy; 2020</span></div>
-        </footer>
     </main>
 </body>
 </html>

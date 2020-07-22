@@ -1,0 +1,7 @@
+.main-section > div:first-child {
+    border: 2px solid red;
+}
+
+.main-section > div:last-child {
+    border: 2px solid blue;
+}
