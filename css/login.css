@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.login-wrapper > div a {
+    text-decoration: none;
+}
+
 .login-form {
     width: 100%;
     display: flex;
