@@ -19,6 +19,7 @@
     align-items: center;
     height: 15vh;
     border-bottom: 2px solid rgb(202, 202, 202);
+    box-shadow: 0px 1px 5px 0px rgba(32, 33, 36, 0.28);
 }
 
 .navbar > .logo, .nav-links {
@@ -59,9 +60,9 @@
 }
 
 .main-section .large-header {
-    padding-top: 2em;
+    padding-top: 1em;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.5em;
     letter-spacing: 1px;
     opacity: .8;
 }
@@ -70,15 +71,22 @@
     text-align: center;
     opacity: 0.8;
     letter-spacing: 1px;
-    font-size: x-large;
+    font-size: large;
     padding-bottom: 1.5em;
     line-height: 1.4em;
 }
 
 .profile {
     height: 40%;
-    margin-bottom: 0.9em;
+    margin-bottom: 0.5em;
     /* border: 2px solid red; */
+}
+
+.about-me {
+    opacity: 0.9;
+    font-size: large;
+    text-align: center;
+    width: 60%;
 }
 
 .main-section .profile > img {

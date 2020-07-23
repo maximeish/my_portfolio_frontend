@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./scripts/app.js"></script>
 </head>
 <body>
@@ -13,7 +15,7 @@
             <img class="logo" src="./assets/logo.svg" alt="logo" />
             <ul class="nav-links navbar-inactive">
                 <li><a class="nav-link" href="#">My Projects</a></li>
-                <li><a class="nav-link" href="#">Send Me a Message</a></li>
+                <li><a class="nav-link" href="./#contact">Send Me a Message</a></li>
                 <li><a class="nav-link" href="./pages/blog.html">My Blog</a></li>
             </ul>
             <div class="burger">
@@ -33,6 +35,60 @@
             </div>
             <div class="profile">
                 <img src="./assets/profile-picture.png" alt="Maxime's picture" />
+            </div>
+
+            <div class="about-me">
+                <h2>About Me</h2>
+                <p>Hi, my name is Maxime Ishimwe, I'm an enthusiastic web developer eager to contribute to team success through hard work,
+                    attention to detail and good organizational skills. Motivated to learn, grow and excel in the Software
+                    Development industry.</p>
+            </div>
+        </section>
+        
+        <section id="contact" class="main-section">
+            <div class="form-wrapper">
+                <div>
+                    <header class="contact-header">
+                        <div class="big-title">Interested in working together?</div>
+                        <div class="small-title">Let's talk...</div>
+                    </header>
+                    
+                    <form class="form-container">
+                        <div class="name-field">
+                            <label class="field-text" for="name">Full names</label><br>
+                            <input type="text" name="name" id="name" />
+                        </div>
+                        
+                        <div class="email-field">
+                            <label class="field-text" for="email">Email</label><br>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        
+                        <div class="phone-field">
+                            <label  class="field-text" for="phone">Telephone</label><br>
+                            <input type="tel" name="phone" id="phone" placeholder="With country code" />
+                        </div>
+
+                        <div class="message-field">
+                            <label class="field-text" for="message">Message</label><br>
+                            <textarea rows="3" cols="45" name="message" id="message"></textarea>
+                        </div>
+
+                        <div class="submit-btn-field">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="links-section">
+                    <header>You can also reach out to me via...</header>
+                    <div><a href="https://twitter.com/"><i class="fa fa-twitter fa-lg"> Twitter</i></a></div>
+                    <div><a href="https://linkedin.com/in/maximeish"><i class="fa fa-linkedin fa-lg"> Linkedin</i></a></div>
+                    <div><a href="mailto:mxmishimwe5@gmail.com"><i class="fa fa-envelope fa-lg"> Email</i></a></div>
+                    <div><a href="https://facebook.com/mqm111"><i class="fa fa-facebook fa-lg"> Facebook</i></a></div>
+                    <div><a href="https://wa.me/+250787720495"><i class="fa fa-whatsapp fa-lg"> WhatsApp</i></a></div>
+                    <div><a href="tel:+250787720495"><i class="fa fa-phone fa-lg"> Phone</i></a></div>
+                </div>
             </div>
         </section>
     </main>
