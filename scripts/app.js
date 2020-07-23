@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         //change some coloring
         navbar.classList.toggle('darken-background');
-        nav.classList.toggle('darken-background');
+        // nav.classList.toggle('darken-background');
         navLinksTxt.forEach(link => {
             link.classList.toggle('darken-color');
         });
