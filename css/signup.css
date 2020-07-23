@@ -18,6 +18,10 @@
     align-items: center;
 }
 
+.signup-wrapper > div a {
+    text-decoration: none;
+}
+
 .signup-form {
     width: 100%;
     display: flex;
@@ -48,6 +52,7 @@
 }
 
 .signup-form button {
+    margin: 15px 0 30px 0;
     outline: none;
     font-size: x-large;
     color: #F9F9F9;
@@ -75,4 +80,38 @@
 
 .signup-wrapper a:hover {
     color: #6860d4;
+}
+
+@media (max-width: 1060px) {
+    .signup-wrapper {
+        width: 60%;
+    }
+}
+
+@media (max-width: 665px) {
+    .signup-wrapper {
+        width: 65%;
+    }
+}
+
+@media (max-width: 500px) {
+    .signup-wrapper {
+        width: 85%;
+    }
+}
+
+@media (max-width: 400px) {
+    .signup-wrapper {
+        height: 100vh;
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    .signup-wrapper p {
+        font-size: medium;
+    }
+
+    .signup-form input {
+        font-size: large;
+    }
 }
