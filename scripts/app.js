@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links li');
     const nav = document.querySelector('.navbar');
     const navLinksTxt = document.querySelectorAll('.nav-link');
+    const docked = false;
 
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         //change some coloring
         navbar.classList.toggle('darken-background');
-        nav.classList.toggle('darken-background');
+        // nav.classList.toggle('darken-background');
         navLinksTxt.forEach(link => {
             link.classList.toggle('darken-color');
         });
