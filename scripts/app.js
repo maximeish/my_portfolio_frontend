@@ -4,16 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links li');
     const nav = document.querySelector('.navbar');
     const navLinksTxt = document.querySelectorAll('.nav-link');
+    const wrapper = document.querySelector('.wrapper');
+    const bars = document.querySelectorAll('.burger div');
     const body = document.querySelector('body');
-
 
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
-        navbar.classList.toggle('navbar-inactive');    
-        body.classList.toggle('hidden-overflow');
+        navbar.classList.toggle('navbar-active');
+        wrapper.classList.toggle('no-overflow');
+        nav.classList.toggle('no-overflow');
+        navbar.classList.toggle('no-overflow');
+        body.classList.toggle('no-overflow-both');
         
         //change some coloring
         navbar.classList.toggle('darken-background');
+        bars.forEach(bar => bar.classList.toggle('bar-darken-background'));
         // nav.classList.toggle('darken-background');
         navLinksTxt.forEach(link => {
             link.classList.toggle('darken-color');

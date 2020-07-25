@@ -1,5 +1,15 @@
 /* Containers section */
 
+#about-me {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background: #fefefe;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #contact {
     /* border: 3px solid red; */
     height: 100vh;
@@ -79,23 +89,13 @@ input:focus, textarea:focus {
     width: 100%;
 }
 
-.about-me {
-    background: #6860d42c;
-    height: 100vh;
-    opacity: 0.9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: large;
-}
-
-.about-me h2 {
+#about-me h2 {
     text-align: center;
     margin-bottom: 1em;
 }
 
-.about-me > div {
-    background: #fefefe;
+#about-me > div {
+    background: #6860d42c;
     width: 65%;
     border-radius: 5px;
 	padding: 40px;
@@ -175,9 +175,9 @@ button[type=submit]:hover {
 
 .links-section > header {
     /* font-weight: normal; */
-    margin-bottom: 1em;
+    margin: 1.8em auto 1em auto;
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     flex-basis: 100%;
 }
 
@@ -256,7 +256,15 @@ button[type=submit]:hover {
     }
 }
 
-
+@media (max-width: 880px) {
+    #about-me > div {
+        width: 80%;
+        font-size: larger;
+    }
+    .links-section > header {
+        font-size: large;
+    }
+}
 
 @media (max-width: 835px) {
     .form-container {
@@ -290,7 +298,7 @@ button[type=submit]:hover {
 }
 
 @media (max-width: 662px) {
-    .about-me > div {
+    #about-me > div {
         width: 80%;
     }
 }
@@ -310,7 +318,7 @@ button[type=submit]:hover {
 }
 
 @media (max-width: 525px) {
-    .about-me > div {
+    #about-me > div {
         width: 90%;
         font-size: large;
     }
