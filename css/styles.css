@@ -307,7 +307,3 @@
         transform: scale(1.5);
     }
 }
-
-.no-overflow-both {
-    overflow: hidden;
-}
