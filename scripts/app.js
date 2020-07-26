@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinksTxt = document.querySelectorAll('.nav-link');
     const wrapper = document.querySelector('.wrapper');
     const bars = document.querySelectorAll('.burger div');
-    const body = document.querySelector('body');
 
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.classList.toggle('no-overflow');
         nav.classList.toggle('no-overflow');
         navbar.classList.toggle('no-overflow');
-        body.classList.toggle('no-overflow-both');
         
         //change some coloring
         navbar.classList.toggle('darken-background');
