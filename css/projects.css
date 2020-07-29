@@ -1,0 +1,176 @@
+#projects {
+    text-align: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "header header"
+    "proj1 proj2"
+    "proj3 proj4"
+    "see-more see-more";
+    justify-items: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+
+#projects .fa {
+    border: none;
+    font-size: 24px;
+}
+
+#projects > div {
+    width: 50%;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+}
+
+#projects > div div:first-child {
+    font-size: 24px;
+}
+
+#projects > div div:last-child {
+    margin-bottom: 5px;
+}
+
+#projects > div div:last-child a {
+    text-decoration: none;
+    color: lightgray;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    border-width: medium;
+    transition: all 0.3s ease-in-out;
+}
+
+#projects > div div:last-child a:hover {
+    background: #7510F7;
+}
+
+#header {
+    grid-area: header;
+    margin: 20px 0;
+}
+
+#header h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#header p {
+    opacity: 0.7;
+}
+
+#proj1, #proj2, #proj3, #proj4 {
+    font-size: 24px;
+}
+
+#proj1 {
+    grid-area: proj1;
+    background: #1B1B2F;
+    color: lightgray;
+}
+
+#proj2 {
+    grid-area: proj2;
+    background: #1F4068;
+    color: lightgray;
+}
+
+#proj3 {
+    grid-area: proj3;
+    background: #E43F5A;
+    color: lightgray;
+}
+
+#proj4 {
+    grid-area: proj4;
+    background: #162447;
+    color: lightgray;
+}
+
+#see-more {
+    grid-area: see-more;
+    width: fit-content;
+    width: -moz-fit-content;
+    border-radius: none;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+
+#see-more a {
+    text-decoration: none;
+    color: #222222;
+    padding: 10px;
+    border: 1px solid #1F4068;
+    border-radius: 10px;
+    margin-bottom: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#see-more a:hover {
+    background: #7510F7;
+    color: white;
+}
+
+@media (max-width: 1125px) {
+    #projects {
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas: 
+        "header"
+        "proj1"
+        "proj2"
+        "proj3"
+        "proj4"
+        "see-more";
+        row-gap: 2em;
+    }
+    
+    #projects > div {
+        width: 30%;
+    }
+}
+
+@media (max-width: 860px) {
+    #projects > div {
+        width: 40%;
+    }
+}
+
+@media (max-width: 670px) {
+    #projects > div {
+        width: 50%;
+    }
+}
+
+@media (max-width: 535px) {
+    #projects > div {
+        width: 60%;
+    }
+}
+
+@media (max-width: 440px) {
+    #projects > div {
+        width: 70%;
+    }
+}
+
+@media (max-width: 370px) {
+    #projects > div {
+        width: 80%;
+    }
+}
+
+@media (max-width: 325px) {
+    #projects > div {
+        width: 90%;
+    }
+}

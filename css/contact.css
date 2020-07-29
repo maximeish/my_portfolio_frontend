@@ -153,10 +153,10 @@ button[type=submit] {
 }
 
 button[type=submit]:hover {
-    box-shadow: 0 0 10px #6860d44f;
-    background: #6860d421;
+    box-shadow: 0 0 15px #776ef17a;
+    background: #7510F7;
     border: 1px solid #5350839d;;
-    /* color: #fefefe; */
+    color: #fefefe;
 }
 
 .form-wrapper div:first-child h1 {

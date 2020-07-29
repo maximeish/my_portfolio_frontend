@@ -1,0 +1,175 @@
+#skills {
+    padding: 50px 0 0 0;
+    height: 110vh;
+    background: #7510F7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro {
+    height: 35%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.intro-header, .intro-desc{
+    color: rgb(238, 238, 238);
+    text-align: center;
+}
+
+.intro-header {
+    font-size: 32px;
+}
+
+.intro-desc {
+    width: 60%;
+    font-size: 20px;
+    line-height: 1.5em;
+    margin: 30px 0;
+}
+
+.skills-table {
+    height: 65%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0 auto;
+    width: 95%;
+    background: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-table .fa {
+    border: none;
+    font-size: 2.5em;
+}
+
+#icon {
+    grid-area: icon;
+}
+
+#big-title {
+    grid-area: big-title;
+}
+
+#small-desc {
+    grid-area: small-desc;
+    text-align: center;
+}
+
+#subtitle1 {
+    grid-area: subtitle1;
+}
+
+#list1 {
+    grid-area: list1;
+}
+
+#subtitle2 {
+    grid-area: subtitle2;
+}
+
+#list2 {
+    grid-area: list2;
+}
+
+.skills-table div {
+    height: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; */
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+    "icon"
+    "big-title"
+    "small-desc"
+    "subtitle1"
+    "list1"
+    "subtitle2"
+    "list2";
+    justify-items: center;
+    align-items: center;
+    padding: 30px;
+    /* border: 3px solid rgb(255, 145, 0); */
+}
+
+.skills-table div:first-child {
+    border-right: 1px solid lightgray;
+}
+
+.skills-table div:last-child {
+    border-left: 1px solid lightgray;
+}
+
+.skills-table ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.skills-table ul li {
+    text-align: center;
+}
+
+@media (max-width: 1125px) {
+    #skills {
+        height: auto;
+    }
+
+    .skills-table {
+        height: auto;
+        width: 50%;
+        background: rgb(228, 228, 228);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills-table div:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgb(197, 197, 197);
+    }
+    
+    .skills-table div:last-child {
+        border-left: none;
+        border-top: 1px solid rgb(197, 197, 197);
+    }
+}
+
+@media (max-width: 800px) {
+    .skills-table {
+        width: 60%;
+    }
+}
+
+@media (max-width: 665px) {
+    .skills-table {
+        width: 70%;
+    }
+
+    .intro-desc {
+        width: 80%;
+    }
+}
+
+@media (max-width: 520px) {
+    .skills-table {
+        width: 80%;
+    }
+}
+
+@media (max-width: 395px) {
+    .skills-table {
+        width: 95%;
+    }
+}
