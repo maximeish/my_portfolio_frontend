@@ -1,0 +1,103 @@
+#post-wrapper {
+    /* border: 2px solid red; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 3em;
+}
+
+#headline {
+    flex-basis: 100%;
+    /* background: blue; */
+    font-size: xx-large;
+}
+
+#headline p {
+    opacity: 0.7;
+    font-size: medium;
+}
+
+#image {
+    flex-basis: 40%;
+    /* background: cadetblue; */
+}
+
+#content1 {
+    flex-basis: 50%;
+    font-size: x-large;
+    /* background: grey; */
+}
+
+#content2 {
+    flex-basis: 100%;
+    font-size: x-large;
+    /* background: lightcyan; */
+}
+
+#content3 {
+    flex-basis: 100%;
+    font-size: x-large;
+}
+
+#comment {
+    flex-basis: 100%;
+    /* background: darkgoldenrod; */
+}
+
+#users-comments {
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-grid {
+    margin: 0 auto;
+    border-radius: 10px;
+    background: rgb(223, 223, 223);
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "user-image user-name"
+    "user-image user-comment"
+    "user-image date-posted"
+    "user-image comment-features";
+    justify-items: center;
+    align-items: center;
+}
+
+.user-image {
+    grid-area: user-image;
+    align-self: center;
+}
+
+.user-name {
+    grid-area: user-name;
+    justify-self: start;
+}
+
+.user-comment {
+    grid-area: user-comment;
+    justify-self: start;
+}
+
+.user-comment span {
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.date-posted {
+    grid-area: date-posted;
+    justify-self: start;
+}
+
+.comment-features {
+    grid-area: comment-features;
+    justify-self: center;
+}
