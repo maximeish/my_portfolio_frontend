@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
         wrapper.classList.toggle('no-overflow');
         nav.classList.toggle('no-overflow');
         navbar.classList.toggle('no-overflow');
+
         
         //change some coloring
         navbar.classList.toggle('darken-background');
         bars.forEach(bar => bar.classList.toggle('bar-darken-background'));
+       
         // nav.classList.toggle('darken-background');
         navLinksTxt.forEach(link => {
             link.classList.toggle('darken-color');

@@ -19,6 +19,25 @@
     align-items: center;
 }
 
+#alert-success {
+    display: none;
+    word-spacing: 3px;
+    padding: 15px;
+    font-size: large;
+    background: #40A940;
+    color: white;
+    margin: 1.2em auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#alert-success span {
+    opacity: 0.9;
+    font-size: small;
+}
+
 .form-wrapper {
     /* border: 2px solid red; */
     height: 95%;
@@ -63,6 +82,11 @@
 .field-text {
     font-weight: lighter;
     font-size: 25px;
+}
+
+label[for=phone] span {
+    font-size: small;
+    opacity: 0.5;
 }
 
 input, textarea {
@@ -285,6 +309,10 @@ button[type=submit]:hover {
     .form-container div {
         width: 80%;
         /* border: 2px solid green; */
+    }
+
+    #alert-success {
+        width: 80%;
     }
 
     .field-text {
