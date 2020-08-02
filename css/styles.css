@@ -307,3 +307,17 @@
         transform: scale(1.5);
     }
 }
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+        transform: scale(.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+        transform: scale(1);
+    }
+}
