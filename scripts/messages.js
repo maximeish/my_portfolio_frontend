@@ -1,21 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     // My web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyBCejsPq2FVa8DP1N2sVIppWivwBoxWZjY",
-        authDomain: "myportfolio-mxm.firebaseapp.com",
-        databaseURL: "https://myportfolio-mxm.firebaseio.com",
-        projectId: "myportfolio-mxm",
-        storageBucket: "myportfolio-mxm.appspot.com",
-        messagingSenderId: "712417574909",
-        appId: "1:712417574909:web:818cf4f3f208f16fc1e394",
-        measurementId: "G-G4FMMPKKC4"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    // var firebaseConfig = {
+    //     apiKey: "AIzaSyBm_cO6kpbZPw-USUP5qNeCeIUUIx8Tb_c",
+    //     authDomain: "maxime-portfolio.firebaseapp.com",
+    //     databaseURL: "https://maxime-portfolio.firebaseio.com",
+    //     projectId: "maxime-portfolio",
+    //     storageBucket: "maxime-portfolio.appspot.com",
+    //     messagingSenderId: "277428965287",
+    //     appId: "1:277428965287:web:cd23ba4a4a57c33758f082",
+    //     measurementId: "G-94LP44ZN00"
+    // };
+    // // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig);
+
+    // Initialize Cloud Firestore through Firebase
+    firebase.initializeApp({
+        apiKey: "AIzaSyBm_cO6kpbZPw-USUP5qNeCeIUUIx8Tb_c",
+        authDomain: "maxime-portfolio.firebaseapp.com",
+        databaseURL: "https://maxime-portfolio.firebaseio.com",
+        projectId: "maxime-portfolio",
+        storageBucket: "maxime-portfolio.appspot.com",
+        messagingSenderId: "277428965287",
+        appId: "1:277428965287:web:cd23ba4a4a57c33758f082",
+        measurementId: "G-94LP44ZN00"
+    });
+  
+    const database = firebase.firestore();
+    
     firebase.analytics();
 
     // Reference messages collection (or table in RDBMSs)
-        var messagesRef = firebase.database().ref('messages');
+        //var messagesRef = firebase.database().ref('messages');
 
     // Contact Form 
     // ************
@@ -65,14 +80,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Save (send) messages to firebase collection
     const saveMessage = (name, email, phone, message) => {
-        var newMessagesRef = messagesRef.push();
-        newMessagesRef.set({
-            name,
-            email,
-            phone,
-            message
-        });
+
+        database.collection('messages')
+            .add({
+                name,
+                email,
+                phone,
+                message
+            })
+            .then(docRef => console.log("Document written with ID: ", docRef.id))
+            .catch(err => console.error("Error adding document: ", err))
+
+        // var newMessagesRef = messagesRef.push();
+        // newMessagesRef.set({
+        //     name,
+        //     email,
+        //     phone,
+        //     message
+        // });
     }
     
     form.addEventListener('submit', submitForm);
+    
+    document.querySelector('#show').addEventListener('click', () => {
+        database
+            .collection("messages")
+            .get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => console.log({ id: doc.id, ...doc.data() }));
+            });
+    })
 });
