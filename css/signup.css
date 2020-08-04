@@ -39,17 +39,22 @@
 }
 
 .signup-form label {
-    font-size: x-large;
+    font-size: large;
 }
 
 .signup-form input {
-    margin-top: .3em;
-    font-size: x-large;
+    margin-top: .2em;
+    font-size: large;
     width: 100%;
-    border: 2px solid #4076FF;
+    border: 1px solid #4076FF;
     padding: 0.3em 2px;
     border-radius: 5px;
     outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.signup-form input:focus {
+    box-shadow: 0px 0px 6px #4076ff48;
 }
 
 .signup-form button {
