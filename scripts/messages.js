@@ -102,12 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     form.addEventListener('submit', submitForm);
     
-    document.querySelector('#show').addEventListener('click', () => {
-        database
-            .collection("messages")
-            .get()
-            .then(querySnapshot => {
-                querySnapshot.forEach(doc => console.log({ id: doc.id, ...doc.data() }));
-            });
-    })
+    // document.querySelector('#show').addEventListener('click', () => {
+    //     database
+    //         .collection("messages")
+    //         .get()
+    //         .then(querySnapshot => {
+    //             querySnapshot.forEach(doc => console.log({ id: doc.id, ...doc.data() }));
+    //         });
+    // })
 });
