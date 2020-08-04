@@ -23,6 +23,15 @@
     text-decoration: none;
 }
 
+#notification {
+    display: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    background: rgba(109, 238, 109, 0.801);
+    color: rgb(255, 255, 255);
+}
+
 .signup-form {
     width: 100%;
     display: flex;
