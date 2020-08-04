@@ -24,11 +24,13 @@
 }
 
 #notification {
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgrey;
     display: none;
     text-align: center;
     text-transform: uppercase;
     padding: 15px;
-    background: rgba(109, 238, 109, 0.801);
     color: rgb(255, 255, 255);
 }
 
@@ -128,5 +130,19 @@
 
     .signup-form input {
         font-size: large;
+    }
+}
+
+@keyframes notificationEffect {
+    from {
+        opacity: 0;
+        transform: scale(0.4);
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        transform: translateY(0px);
     }
 }
