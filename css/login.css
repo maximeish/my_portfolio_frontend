@@ -83,6 +83,17 @@
     color: #6860d4;
 }
 
+#login-google-btn {
+    background: #fefefe;
+    color: rgb(26, 26, 26);
+    transition: all 0.3s ease-in-out;
+}
+
+#login-google-btn:hover {
+    background: #f3f3f3;
+    color: rgb(56, 56, 56);
+}
+
 @media (max-width: 1060px) {
     .login-wrapper {
         width: 60%;
