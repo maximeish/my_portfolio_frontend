@@ -1,6 +1,9 @@
 // Sign user up
 
-const notif = document.querySelector('#notification');
+['#username', '#email', '#password', '#repeat_password'].forEach(val => {
+    document.querySelector(val).addEventListener('change', () => onInputChange())
+})
+
 
 document.querySelector('#signup-form-id').addEventListener('submit', e => {
     e.preventDefault();
@@ -18,11 +21,7 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
     }
 
     const setupOnChange = () => {
-        ['#username', '#email', '#password', '#repeat_password'].forEach(val => {
-            document.querySelector(val).addEventListener('change', () => {
-                notif.style.display = 'none';
-            });
-        })
+
     }
 
     if (username && email && password && password_chk) {
