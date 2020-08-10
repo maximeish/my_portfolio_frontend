@@ -6,7 +6,18 @@
     <title>Log in to Your Account on Maxime's blog</title>
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/login.css" />
-    <script src="../scripts/app.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/auth.js"></script>
+    <script defer src="../scripts/login.js"></script>
 </head>
 <body>
     <main class="wrapper">
@@ -17,17 +28,18 @@
                 </a>
             </div>
             <form class="login-form" action="#" method="POST">
+                <div id="notification"></div>
                 <div>
                     <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email" />
+                    <input type="email" name="email" id="email" required/>
                 </div>
                 <div>
                     <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password" />
+                    <input type="password" name="password" id="password" required/>
                 </div>
 
-                <button type="submit">Login</button>
-                <button id="login-google-btn"><i class="fa fa-google fa-lg"></i>Login with Google</button>
+                <button id="login-btn" type="submit">Login</button>
+                <button id="login-google-btn" disabled><i class="fa fa-google fa-lg"></i>Login with Google</button>
             </form>
             
             <p>Don't have an account? <a href="./signup.html">Sign up</a></p>

@@ -1,8 +1,9 @@
 // Sign user up
-
-['#username', '#email', '#password', '#repeat_password'].forEach(val => {
-    document.querySelector(val).addEventListener('change', () => onInputChange())
-})
+const setupOnChange = () => {
+    ['#username', '#email', '#password', '#repeat_password'].forEach(val => {
+        document.querySelector(val).addEventListener('change', () => onInputChange())
+    });
+}
 
 
 document.querySelector('#signup-form-id').addEventListener('submit', e => {
@@ -18,10 +19,6 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
         notif.style.display = 'block';
         notif.innerHTML = msg;
         notif.style.background = background || 'rgba(255, 0, 0, 0.5)';
-    }
-
-    const setupOnChange = () => {
-
     }
 
     if (username && email && password && password_chk) {
