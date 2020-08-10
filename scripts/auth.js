@@ -8,7 +8,7 @@ const provider = new firebase.auth.GoogleAuthProvider();
 
 
 // remove the error on input change
-const onInputChange = () => document.querySelector('#notification').setAttribute('hidden', 'true');
+const onInputChange = () => document.querySelector('#notification').setAttribute('hidden', true);
 
 
 // log in the user using Google Auth
@@ -54,10 +54,7 @@ const login = (email, password) => {
             notif.innerHTML = err.message;
             notif.style.background = 'rgba(255, 0, 0, 0.5)';
             ['#email', '#password'].forEach(val => {
-                document.querySelector(val).addEventListener('change', e => {
-                    notif.style.display = 'none';
-                    notif.setAttribute('hidden', true);
-                });
+                document.querySelector(val).addEventListener('change', () => onInputChange());
             });
         });
 

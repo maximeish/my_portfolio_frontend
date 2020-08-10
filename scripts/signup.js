@@ -1,7 +1,11 @@
+
+const notif = document.querySelector('#notification');
 // Sign user up
 const setupOnChange = () => {
     ['#username', '#email', '#password', '#repeat_password'].forEach(val => {
-        document.querySelector(val).addEventListener('change', () => onInputChange())
+        document.querySelector(val).addEventListener('change', () => {
+            notif.style.display = 'none';
+        })
     });
 }
 
@@ -28,14 +32,20 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
                 .createUserWithEmailAndPassword(email, password)
                 .then(() => {
                     document.querySelector('#signup-form-id').reset();
-                    changeNotification('registration successful', 'rgb(62, 184, 62)');
+                    setTimeout(() => {
+                        changeNotification('registration successful', 'rgb(62, 184, 62)');
+                    }, 2000)
                 })
                 .catch(error => {
                     changeNotification(error.message);
                     setupOnChange();
                 });
         } else {
-            notif.innerHTML = 'Passwords do not match';
+            let msg;
+            if (!(username.length > 5)) {
+                msg = 'Passwords do not match and username should be more than 5 characters';
+            }
+            notif.innerHTML = 'Passwords do not match' || msg;
             notif.style.animation = 'notificationEffect 0.5s ease-in forwards';
             notif.style.display = 'block';
             notif.style.background = 'rgba(255, 0, 0, 0.5)';
