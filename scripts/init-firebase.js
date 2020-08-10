@@ -11,3 +11,5 @@ firebase.initializeApp({
 });
 
 firebase.analytics();
+
+const database = firebase.firestore();
