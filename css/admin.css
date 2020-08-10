@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: url('../assets/fonts/Ubuntu-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url('../assets/fonts/Ubuntu-Bold.ttf');
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper section, .wrapper header {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper header {
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: lightblue;
+    font-size: 2em;
+}
+
+.wrapper section {
+    background: green;
+}
