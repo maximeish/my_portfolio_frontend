@@ -19,6 +19,17 @@
     align-items: center;
 }
 
+#notification {
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgrey;
+    display: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+}
+
 .login-wrapper > div a {
     text-decoration: none;
 }
@@ -83,6 +94,17 @@
     color: #6860d4;
 }
 
+#login-google-btn {
+    background: #fefefe;
+    color: rgb(26, 26, 26);
+    transition: all 0.3s ease-in-out;
+}
+
+#login-google-btn:hover {
+    background: #f3f3f3;
+    color: rgb(56, 56, 56);
+}
+
 @media (max-width: 1060px) {
     .login-wrapper {
         width: 60%;
@@ -114,5 +136,17 @@
 
     .login-form input {
         font-size: large;
+    }
+}
+
+@keyframes notificationEffect {
+    from {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
