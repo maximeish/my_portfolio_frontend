@@ -1,21 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // My web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyBCejsPq2FVa8DP1N2sVIppWivwBoxWZjY",
-        authDomain: "myportfolio-mxm.firebaseapp.com",
-        databaseURL: "https://myportfolio-mxm.firebaseio.com",
-        projectId: "myportfolio-mxm",
-        storageBucket: "myportfolio-mxm.appspot.com",
-        messagingSenderId: "712417574909",
-        appId: "1:712417574909:web:818cf4f3f208f16fc1e394",
-        measurementId: "G-G4FMMPKKC4"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
 
     // Reference messages collection (or table in RDBMSs)
-        var messagesRef = firebase.database().ref('messages');
+    //var messagesRef = firebase.database().ref('messages');
 
     // Contact Form 
     // ************
@@ -65,14 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Save (send) messages to firebase collection
     const saveMessage = (name, email, phone, message) => {
-        var newMessagesRef = messagesRef.push();
-        newMessagesRef.set({
-            name,
-            email,
-            phone,
-            message
-        });
+
+        database.collection('messages')
+            .add({
+                name,
+                email,
+                phone,
+                message
+            })
+            .then(docRef => console.log("Document written with ID: ", docRef.id))
+            .catch(err => console.error("Error adding document: ", err))
     }
     
     form.addEventListener('submit', submitForm);
-});
+    
+    // document.querySelector('#show').addEventListener('click', () => {
+    //     database
+    //         .collection("messages")
+    //         .get()
+    //         .then(querySnapshot => {
+    //             querySnapshot.forEach(doc => console.log({ id: doc.id, ...doc.data() }));
+    //         });
+    // })
