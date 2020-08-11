@@ -9,7 +9,7 @@ database
             div.innerHTML = `
                 <h2>${doc.data().title}</h2>
                 <span>Posted on ${date.toString().split('T')[0]} at ${date.toString().split('T')[1]} by Maxime I.</span>
-                <p>${doc.data().paragraph1}...</p>
+                <p>${doc.data().paragraphContent.toString().split(' ').splice(0, 10).join(' ')}...</p>
                 <a href="./posts/${doc.data().filename}">Read more</a>
             `;
             div.classList.add('post');
