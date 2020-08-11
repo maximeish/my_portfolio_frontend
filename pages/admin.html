@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../css/admin.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
     <script defer src="../scripts/admin.js"></script>
 </head>
 <body>
@@ -17,11 +28,11 @@
             <div id="status">
                 <div>
                     <div>Posts</div>
-                    <div>3</div>
+                    <div id="posts-count">0</div>
                 </div>
                 <div>
                     <div>Messages</div>
-                    <div>10</div>
+                    <div id="messages-count">0</div>
                 </div>
             </div>
             <div id="editor">
@@ -31,9 +42,33 @@
                     <div onclick="showPanel(2, '#C5CC5D')" class="tab-title">Create Post</div>
                 </div>
 
-                <div class="tab-panel">posts</div>
-                <div class="tab-panel">messages</div>
-                <div class="tab-panel">post creator</div>
+                <div id="blog-posts" class="tab-panel"></div>
+                <div class="tab-panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Message</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messages">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div id="post-creator" class="tab-panel">
+                    <form id="post-creatorForm" method="POST" action="#">
+                        <div>Title</div><div><input type="text" name="title" id="title"></div>
+                        <div>Image</div><div><input type="file" name="image" id="image"></div>
+                        <div>Paragraph 1</div><div><input type="text" name="paragraph1" id="paragraph1"></div>
+                        <div>Paragraph 2</div><div><input type="text" name="paragraph2" id="paragraph2"></div>
+                        <div>Paragraph 3</div><div><input type="text" name="paragraph3" id="paragraph3"></div>
+                        <div>Date Posted</div><div><input type="datetime-local" name="date_posted" id="date_posted"></div>
+                        <div><button>Post</button></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
