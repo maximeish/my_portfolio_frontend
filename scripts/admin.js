@@ -27,6 +27,19 @@ showPanel(0, '#C5CC5D');
 // database functions
 
 
+// delete post
+
+const deletePost = id => {
+    database
+        .collection('posts')
+        .doc(id).delete()
+        .then(() => console.log('Post successfully deleted'))
+        .catch(err => console.log('Error deleting document: ', err));
+}
+
+// end of delete post
+
+
 // getting posts
 
 let count = 0;
@@ -39,14 +52,16 @@ const getPosts = () => {
                 document.querySelector('#posts-count').innerHTML = parseInt(document.querySelector('#posts-count').innerHTML) + 1;
                 const blogPostsWrapper = document.querySelector('#blog-posts');
                 const div = document.createElement('div');
+                const retId = id => id;
                 div.innerHTML = `
                     <div class="blog-post">
                         <div>${doc.data().title}</div>
                         <div>${doc.data().paragraph1}</div>
-                        <div><i class="fa fa-trash fa-lg"></i></div>
+                        <div><i id="${doc.id}" class="fa fa-trash fa-lg"></i></div>
                         <div><i class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
                 blogPostsWrapper.appendChild(div);
+                document.querySelector(`#${doc.id}`).setAttribute('onclick', () => delete(retId(doc.id)));
                 // console.log(`${doc.id} - ${JSON.stringify(doc.data())}`);
             })
         })
@@ -58,6 +73,7 @@ const getPosts = () => {
 getPosts();
 
 // end of getting posts
+
 
 // get messages
 
