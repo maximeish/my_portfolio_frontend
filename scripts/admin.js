@@ -1,7 +1,6 @@
 //admin board
 const tabTitles = document.querySelectorAll('#editor .tab-title');
 const tabPanels = document.querySelectorAll('#editor .tab-panel');
-// let messagesCount = 0, postsCount = 0;
 
 const showPanel = (panelIndex, colorCode) => {
     tabTitles.forEach(node => {
@@ -24,15 +23,40 @@ const showPanel = (panelIndex, colorCode) => {
 showPanel(0, '#C5CC5D');
 
 
-// database functions
+// ** database functions ** //
+
+// Update post
+
+const updatePost = event => {
+    const wrapper = document.createElement('div');
+    const mainWrapper = document.querySelector('.wrapper');
+    mainWrapper.style.filter = 'brightness(50%)';
+    wrapper.style.filter = 'brightness(100%)';
+    wrapper.innerHTML = `
+        <div>
+        update your post
+        </div>
+    `;
+    mainWrapper.appendChild(wrapper);
+
+    wrapper.style.position = 'absolute';
+    wrapper.style.top = '50%';
+    wrapper.style.left = '50%';
+    wrapper.style.height = '100vh';
+    wrapper.style.width = '100vw';
+    
+
+    // Element.style.backgroundColor = 'red';
+}
+
 
 
 // delete post
 
-const deletePost = id => {
+const deletePost = event => {
     database
         .collection('posts')
-        .doc(id).delete()
+        .doc(event.target.id).delete()
         .then(() => console.log('Post successfully deleted'))
         .catch(err => console.log('Error deleting document: ', err));
 }
@@ -52,17 +76,16 @@ const getPosts = () => {
                 document.querySelector('#posts-count').innerHTML = parseInt(document.querySelector('#posts-count').innerHTML) + 1;
                 const blogPostsWrapper = document.querySelector('#blog-posts');
                 const div = document.createElement('div');
-                const retId = id => id;
                 div.innerHTML = `
-                    <div class="blog-post">
+                    <div class='blog-post' data-identifier="${doc.id}">
                         <div>${doc.data().title}</div>
                         <div>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(" ")}...</div>
                         <div><i id="${doc.id}" class="fa fa-trash fa-lg"></i></div>
-                        <div><i class="fa fa-pencil fa-lg"></i></div>
+                        <div><i id="${doc.id}-${doc.id}" class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
                 blogPostsWrapper.appendChild(div);
-                document.querySelector(`#${doc.id}`).setAttribute('onclick', () => delete(retId(doc.id)));
-                // console.log(`${doc.id} - ${JSON.stringify(doc.data())}`);
+                document.querySelector(`#${doc.id}`).addEventListener('click', e => deletePost(e));
+                document.querySelector(`#${doc.id}-${doc.id}`).addEventListener('click', e => updatePost(e));
             })
         })
         .catch(error => {
@@ -136,4 +159,5 @@ const createPost = () => {
 }
 
 createPost();
+
 
