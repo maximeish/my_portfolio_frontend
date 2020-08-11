@@ -56,7 +56,7 @@ const getPosts = () => {
                 div.innerHTML = `
                     <div class="blog-post">
                         <div>${doc.data().title}</div>
-                        <div>${doc.data().paragraph1}</div>
+                        <div>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(" ")}...</div>
                         <div><i id="${doc.id}" class="fa fa-trash fa-lg"></i></div>
                         <div><i class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
@@ -114,27 +114,23 @@ const createPost = () => {
     postCreatorForm.addEventListener('submit', e => {
         e.preventDefault();
         const title = document.querySelector('#title').value;
-        const paragraph1 = document.querySelector('#paragraph1').value;
-        const paragraph2 = document.querySelector('#paragraph2').value || null;
-        const paragraph3 = document.querySelector('#paragraph3').value || null;
+        const paragraphs = document.querySelector('#paragraphs').value;
         const date_posted = document.querySelector('#date_posted').value;
         const filename = document.querySelector('#filename').value;
-        if ((title && paragraph1 && date_posted && filename) || paragraph2 || paragraph3) {
+        if (title && paragraphs && date_posted && filename) {
             // Add a new document with a generated id.
             database
                 .collection("posts")
                 .add({
                     title,
-                    paragraph1,
-                    paragraph2,
-                    paragraph3,
+                    paragraphs,
                     date_posted,
                     filename
                 })
                 .then(docRef => console.log("Document written with ID: ", docRef.id))
                 .catch(error => console.error("Error adding document: ", error))
         } else {
-            console.log('Error: at least profile a title and paragraph1');
+            console.log('Error: fill all the fields');
         }
     })
 }
