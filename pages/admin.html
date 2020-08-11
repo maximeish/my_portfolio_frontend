@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../css/admin.css">
+    <script defer src="../scripts/admin.js"></script>
 </head>
 <body>
     
@@ -13,9 +14,27 @@
             <div>Admin Dashboard</div>
         </header>
         <section class="dashboard-grid">
-            <div>Editor</div>
-            <div>Status</div>
-            <div>Create post</div>
+            <div id="status">
+                <div>
+                    <div>Posts</div>
+                    <div>3</div>
+                </div>
+                <div>
+                    <div>Messages</div>
+                    <div>10</div>
+                </div>
+            </div>
+            <div id="editor">
+                <div class="tabs-wrapper">
+                    <div onclick="showPanel(0, '#C5CC5D')" class="tab-title">Blog Posts</div>
+                    <div onclick="showPanel(1, '#C5CC5D')" class="tab-title">Form Messages</div>
+                    <div onclick="showPanel(2, '#C5CC5D')" class="tab-title">Create Post</div>
+                </div>
+
+                <div class="tab-panel">posts</div>
+                <div class="tab-panel">messages</div>
+                <div class="tab-panel">post creator</div>
+            </div>
         </section>
     </main>
 </body>
