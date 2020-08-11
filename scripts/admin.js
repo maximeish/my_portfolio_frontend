@@ -101,8 +101,9 @@ const createPost = () => {
         const paragraph1 = document.querySelector('#paragraph1').value;
         const paragraph2 = document.querySelector('#paragraph2').value || null;
         const paragraph3 = document.querySelector('#paragraph3').value || null;
-        const date_posted = document.querySelector('#date_posted').value || Date.toString();
-        if ((title && paragraph1) || paragraph2 || paragraph3) {
+        const date_posted = document.querySelector('#date_posted').value;
+        const filename = document.querySelector('#filename').value;
+        if ((title && paragraph1 && date_posted && filename) || paragraph2 || paragraph3) {
             // Add a new document with a generated id.
             database
                 .collection("posts")
@@ -111,7 +112,8 @@ const createPost = () => {
                     paragraph1,
                     paragraph2,
                     paragraph3,
-                    date_posted
+                    date_posted,
+                    filename
                 })
                 .then(docRef => console.log("Document written with ID: ", docRef.id))
                 .catch(error => console.error("Error adding document: ", error))
