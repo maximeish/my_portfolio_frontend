@@ -1,4 +1,12 @@
+// redirect to blog page if user is authenticated
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        window.location.href = './blog.html';
+        globalUser = user;
+    }
 
+    else console.log('User not signed in')
+});
 const notif = document.querySelector('#notification');
 // Sign user up
 const setupOnChange = () => {
@@ -16,7 +24,7 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const password_chk = document.querySelector('#repeat_password').value;
-    const role = 'User';
+    const role = 'user';
 
     const changeNotification = (msg, background) => {
         if (notif.style.animation) notif.style.animation = '';
@@ -32,6 +40,10 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
                 .auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then(() => {
+                    database.collection('users').add({
+                        username: email,
+                        role
+                    });
                     document.querySelector('#signup-form-id').reset();
                     setTimeout(() => {
                         changeNotification('registration successful', 'rgb(62, 184, 62)');

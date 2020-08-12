@@ -1,3 +1,5 @@
+document.querySelector('#admin-link').style.display = 'none';
+
 database
     .collection('posts')
     .get()
@@ -17,3 +19,38 @@ database
         });
     })
 
+
+
+ 
+async function blogAuth() {
+    firebase.auth().onAuthStateChanged(() => {
+        if (globalUser){
+            const signupLink = document.querySelector('#auth-logout a');
+            const linksContainer = document.querySelector('.links-container');
+            document.querySelector('.links-container').style.display = 'none';
+            document.querySelector('#auth-logout a').style.display = 'none';
+            document.querySelector('#auth-logout').innerHTML = '<button><i class="fa fa-sign-out"></i>&nbsp;Logout</button>';
+            document.querySelector('#auth-logout button').addEventListener('click', () => {
+                firebase.auth().signOut();
+                location.reload();
+
+            });
+            const prom = new Promise((resolve, reject) => {
+                if (globalUser.email === 'mxmishimwe5@gmail.com') {
+                    resolve('admin');
+                } else {
+                    reject('not admin');
+                }
+            })
+            prom.then(() => {
+                document.querySelector('#admin-link').style.display = 'block';
+            }).catch(() => {
+                console.log('welcome user');
+            });
+        } else {
+            console.log('user not signed in');
+        }
+    });
+}
+
+blogAuth();

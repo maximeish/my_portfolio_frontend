@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maxime's Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/blog.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -13,10 +14,12 @@
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
     <script defer src="../scripts/init-firebase.js"></script>
     <script defer src="../scripts/app.js"></script>
+    <script defer src="../scripts/auth.js"></script>
     <script defer src="../scripts/blog-auth.js"></script>
 </head>
 <body>
@@ -26,10 +29,11 @@
             <ul class="nav-links navbar-inactive">
                 <li><a class="nav-link" href="../#projects">My Projects</a></li>
                 <li><a class="nav-link" href="../#contact">Send Me a Message</a></li>
-                <li><a class="nav-link" href="./signup.html">Sign up</a></li>
+                <li id="auth-logout"><a id="auth-signup" class="nav-link" href="./signup.html">Sign up</a></li>
             </ul>
-            <div id='user-display-name'></div>
-            <div><a href="admin.html">Admin Page</a></div>
+            <div id="admin-link">
+                <a href="admin.html"><i class="fa fa-user"></i> Admin Page</a>
+            </div>
             <div class="burger">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -45,27 +49,6 @@
                 
                 <div class="posts-wrapper">
                     <h2>Here are some of my posts...</h2>
-<<<<<<< HEAD
-                    <div class="post">
-                        <h2>Introduction to ReactJS</h2>
-                        <span>Posted on May 20<sup>th</sup>, 2020 by Maxime I.</span>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam exercitation...</p>
-                        <a href="./posts/introduction-to-reactjs.html">Read more</a>
-                    </div>
-                    <div class="post">
-                        <h2>Git and Github best practices</h2>
-                        <span>Posted on Feb 10<sup>th</sup>, 2020 by Maxime I.</span>
-                        <p>Ipsum minima et, dolores nisi eos dicta in voluptatem quod aperiam laborum impedit, alias fugit earum dolorum! Aspernatur, unde. Rem, numquam animi...</p>
-                        <a href="./posts/git-and-github-best-practices.html">Read more</a>
-                    </div>
-                    <div class="post">
-                        <h2>A Dive into the basics of Linux</h2>
-                        <span>Posted on Dec 10<sup>th</sup>, 2019 by Maxime I.</span>
-                        <p>Aliquam harum quidem dolore voluptate, possimus rem quis delectus pariatur culpa molestias est soluta consequatur? Laborum ex cupiditate cumque labore non voluptatem...</p>
-                        <a href="./posts/a-dive-into-the-basics-of-linux.html">Read more</a>
-                    </div>
-=======
->>>>>>> ft-blog-landing-page
                 </div>
             </div>
             
