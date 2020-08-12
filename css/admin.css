@@ -124,7 +124,9 @@
 /* Editor box  */
 
 #editor {
-
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .tabs-wrapper {
@@ -143,13 +145,24 @@
     justify-content: center;
     cursor: pointer;
     background: #eee;
-    border:1px solid black;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+    border-top:1px solid lightgray;
     transition: all 0.3s ease-in-out;
 }
 
 .tabs-wrapper div:hover {
     background: #d7d4d4;
 }
+
+.tabs-wrapper div:first-child {
+    border-top-left-radius: 10px;
+}
+
+.tabs-wrapper div:last-child {
+    border-top-right-radius: 10px;
+}
+
 
 .tab-panel {
     height: 85%;
@@ -182,7 +195,20 @@
 
 .blog-post div:first-child {
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.1em;
+    flex-basis: 30%;
+}
+
+.blog-post div:nth-child(2) {
+    flex-basis: 40%;
+}
+
+.blog-post div:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.blog-post div:last-child {
+    flex-basis: 15%;
 }
 
 .fa {

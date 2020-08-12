@@ -142,7 +142,7 @@ const getPosts = () => {
                 div.innerHTML = `
                     <div class='blog-post displayMod' data-identifier="${doc.id}">
                         <div>${doc.data().title}</div>
-                        <div>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(" ")}...</div>
+                        <div>${doc.data().paragraphs.toString().split(' ').splice(0, 5).join(" ")}...</div>
                         <div><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></div>
                         <div><i id="a_${doc.id}-${doc.id}" class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
