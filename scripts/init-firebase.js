@@ -13,8 +13,5 @@ firebase.initializeApp({
 firebase.analytics();
 
 const database = firebase.firestore();
-<<<<<<< HEAD
 const storage = firebase.storage();
 const storageRef = storage.ref();
-=======
->>>>>>> ft-blog-landing-page
