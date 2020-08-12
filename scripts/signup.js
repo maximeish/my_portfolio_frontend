@@ -21,7 +21,7 @@ const setupOnChange = () => {
 document.querySelector('#signup-form-id').addEventListener('submit', e => {
     e.preventDefault();
     const username = document.querySelector('#username').value;
-    const email = document.querySelector('#email').value;
+    const email = document.querySelector('#email').value.toString();
     const password = document.querySelector('#password').value;
     const password_chk = document.querySelector('#repeat_password').value;
     const role = 'user';
@@ -36,18 +36,20 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
 
     if (username && email && password && password_chk) {
         if (password === password_chk) {
+            database
+                .collection("users")
+                .doc(email)
+                .set({
+                    username: username,
+                    role: role
+                });
+
             firebase
                 .auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then(() => {
-                    database.collection('users').add({
-                        username: email,
-                        role
-                    });
                     document.querySelector('#signup-form-id').reset();
-                    setTimeout(() => {
-                        changeNotification('registration successful', 'rgb(62, 184, 62)');
-                    }, 2000)
+                    changeNotification('registration successful', 'rgb(62, 184, 62)');
                 })
                 .catch(error => {
                     changeNotification(error.message);

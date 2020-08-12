@@ -4,6 +4,7 @@ database
     .collection('posts')
     .get()
     .then(result => {
+        globalUser = globalUser || {email: null}
         result.forEach(doc => {
             const postsWrapper = document.querySelector('.posts-wrapper');
             const div = document.createElement('div');
@@ -12,13 +13,12 @@ database
                 <h2>${doc.data().title}</h2>
                 <span>Posted on ${date.toString().split('T')[0]} at ${date.toString().split('T')[1]} by Maxime I.</span>
                 <p>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(' ')}...</p>
-                <a href="./posts/${doc.data().filename}">Read more</a>
+                <a href="./post.html?docID=${doc.id}&userEmail=${globalUser.email || null}">Read more</a>
             `;
             div.classList.add('post');
             postsWrapper.appendChild(div);
         });
     })
-
 
 
  
@@ -33,7 +33,6 @@ async function blogAuth() {
             document.querySelector('#auth-logout button').addEventListener('click', () => {
                 firebase.auth().signOut();
                 location.reload();
-
             });
             const prom = new Promise((resolve, reject) => {
                 if (globalUser.email === 'mxmishimwe5@gmail.com') {

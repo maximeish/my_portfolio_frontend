@@ -10,6 +10,11 @@
     gap: 3em;
 }
 
+#auth-resets {
+    padding: 0px;
+    border: none;
+}
+
 .signup-btn {
     border: 1px solid #7510F7;
     padding: 10px;
@@ -197,4 +202,8 @@
 .like-count {
     grid-area: like-count;
     justify-self: start;
+}
+
+#admin-link {
+    flex-basis: 15% !important;
 }

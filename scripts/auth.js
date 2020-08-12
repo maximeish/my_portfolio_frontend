@@ -1,4 +1,4 @@
-let globalUser;
+var globalUser;
 // redirect to blog page if user is authenticated
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
