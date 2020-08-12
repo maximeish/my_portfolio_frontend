@@ -34,3 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.querySelector('#user-display-name').innerHTML = user.name;
+console.log(user);

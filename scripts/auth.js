@@ -1,8 +1,12 @@
 // redirect to blog page if user is authenticated
-firebase.auth().onAuthStateChanged(user =>
-    user ? window.location.href = './blog.html' 
-    : console.log('User not signed in')
-);
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        window.location.href = './blog.html';
+        document.querySelector('#user-display-name').innerHTML = user.name;
+    }
+
+    else console.log('User not signed in')
+});
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
