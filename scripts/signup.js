@@ -16,6 +16,7 @@ document.querySelector('#signup-form-id').addEventListener('submit', e => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     const password_chk = document.querySelector('#repeat_password').value;
+    const role = 'User';
 
     const changeNotification = (msg, background) => {
         if (notif.style.animation) notif.style.animation = '';
