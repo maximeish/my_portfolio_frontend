@@ -181,6 +181,10 @@
 }
 
 @media (max-width: 985px) {
+    .posts-wrapper > h2 {
+        text-align: center;
+    }
+    
     .main-section {
         flex-direction: column;
         justify-content: space-around;
