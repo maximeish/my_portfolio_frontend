@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: url('../assets/fonts/Ubuntu-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold';
+    src: url('../assets/fonts/Ubuntu-Bold.ttf');
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper section, .wrapper header {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper header {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #655DCC;
+    font-size: 2em;
+    color: #fefefe;
+}
+
+.wrapper > section {
+    height: 85vh;
+}
+
+.dashboard-grid {
+    padding: .7em;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 12fr;
+    grid-template-areas: 
+    "status ."
+    "editor editor";
+    row-gap: 2em;
+}
+
+.dashboard-grid > div {
+    text-align: center;
+    border-radius: 10px;
+}
+
+#editor {
+    grid-area: editor;
+    background: lightgrey;
+}
+
+/* Status box */
+
+#status {
+    grid-area: status;
+    display: flex;
+    /* border: 2px solid red; */
+}
+
+#status > div {
+    border: 1px solid lightgray;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid black; */
+}
+
+#status > div:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#status > div:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+#status > div div {
+    /* border: 1px solid lightgray; */
+    flex-basis: 50%;
+}
+
+#status > div div:first-child {
+    background: #655DCC;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#status > div:first-child div:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+#status > div div:last-child {
+    font-weight: bold;
+}
+
+/* End of status box */
+
+
+
+/* Editor box  */
+
+#editor {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.tabs-wrapper {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: blue; */
+}
+
+.tabs-wrapper div {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #eee;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+    border-top:1px solid lightgray;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs-wrapper div:hover {
+    background: #d7d4d4;
+}
+
+.tabs-wrapper div:first-child {
+    border-top-left-radius: 10px;
+}
+
+.tabs-wrapper div:last-child {
+    border-top-right-radius: 10px;
+}
+
+
+.tab-panel {
+    height: 85%;
+    font-size: large;
+    display: none;
+    padding: 0.5em;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.blog-post {
+    font-size: 1.1em;
+    border-radius: 10px;
+    /* margin: 10px; */
+    padding: 10px;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.blog-post div {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-post div:first-child {
+    font-weight: bold;
+    font-size: 1.1em;
+    flex-basis: 30%;
+}
+
+.blog-post div:nth-child(2) {
+    flex-basis: 40%;
+}
+
+.blog-post div:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.blog-post div:last-child {
+    flex-basis: 15%;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+/* End of editor box  */

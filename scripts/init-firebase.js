@@ -13,3 +13,5 @@ firebase.initializeApp({
 firebase.analytics();
 
 const database = firebase.firestore();
+const storage = firebase.storage();
+const storageRef = storage.ref();
