@@ -209,6 +209,11 @@
     color: #fefefe;
 }
 
+#admin-link {
+    flex-basis: 15% !important;
+}
+
+
 @media (max-width: 985px) {
     .posts-wrapper > h2 {
         text-align: center;

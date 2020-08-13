@@ -87,6 +87,26 @@
     /* background: grey; */
 }
 
+#comment-editor {
+    border: 2px solid rgba(169, 169, 169, 0.4);
+    border-radius: 10px;
+}
+
+#comment-editor div:first-child {
+    color: white;
+    background: rgb(126, 126, 126);
+    width: 100%;
+    margin-top: 0px;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(169, 169, 169, 0.4);
+    border-radius: 10px 10px 0 0;
+}
+
+#users-comments h2, #users-comments hr {
+    margin: 1em 0;
+}
+
 #comment {
     flex-basis: 100%;
     /* background: darkgoldenrod; */
@@ -119,7 +139,7 @@
 
 .comment-grid {
     padding: 20px;
-    margin: 0 auto;
+    margin: 2em auto;
     border-radius: 10px;
     background: linear-gradient(to right, rgb(218, 218, 218), rgb(245, 245, 245));
     width: 70%;
