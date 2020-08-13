@@ -202,7 +202,6 @@ const createPost = () => {
         const title = document.querySelector('#title').value;
         const paragraphs = document.querySelector('#paragraphs').value;
         const date_posted = document.querySelector('#date_posted').value;
-        const filename = document.querySelector('#filename').value;
         const image = document.querySelector('#image').files[0];
         const imageFilename = 'posts-images/' + image.name;
         const imagesRef = storageRef.child(`posts-images/${image.name}`);
@@ -216,7 +215,6 @@ const createPost = () => {
                     title,
                     paragraphs,
                     date_posted,
-                    filename,
                     imageFilename
                 })
                 .then(docRef => {
