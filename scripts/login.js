@@ -1,3 +1,13 @@
+// redirect to blog page if user is authenticated
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        window.location.href = './blog.html';
+        globalUser = user;
+    }
+
+    else console.log('User not signed in')
+});
+
 document.querySelector('#login-google-btn').addEventListener('click', e => {
     e.preventDefault();
 
@@ -10,7 +20,7 @@ document.querySelector('#login-btn').addEventListener('click', e => {
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
 
-    if (email && password) login(email, password);
+    if (email && password) login(email, password, 'user');
 
     else {
         const notif = document.querySelector('#notification');
