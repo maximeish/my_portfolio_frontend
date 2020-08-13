@@ -1,4 +1,7 @@
 document.querySelector('#admin-link').style.display = 'none';
+const arrDates = [];
+let count = 0;
+const postsWrapper = document.querySelector('.posts-wrapper');
 
 database
     .collection('posts')
@@ -6,7 +9,8 @@ database
     .then(result => {
         globalUser = globalUser || {email: null}
         result.forEach(doc => {
-            const postsWrapper = document.querySelector('.posts-wrapper');
+            arrDates.push(doc.data().date_posted.toString().split('-').join('').split('T').join('').split(':')[0]);
+            
             const div = document.createElement('div');
             const date = doc.data().date_posted;
             div.innerHTML = `
@@ -16,9 +20,13 @@ database
                 <a href="./post.html?docID=${doc.id}&userEmail=${globalUser.email || null}">Read more</a>
             `;
             div.classList.add('post');
+            div.setAttribute('id', `a${arrDates[count++]}`);
             postsWrapper.appendChild(div);
         });
-    })
+        // Sort posts in chronological order
+        const sortedPosts = arrDates.sort((a, b) => b - a);
+        for (let i = 0; i < sortedPosts.length; ++i) postsWrapper.appendChild(document.querySelector(`#a${sortedPosts[i]}`));
+    });
 
 
  
