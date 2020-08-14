@@ -13,6 +13,7 @@
     src: url('../assets/fonts/Ubuntu-Bold.ttf');
 }
 
+/* Global resets and containers */
 
 * {
     margin: 0px;
@@ -28,6 +29,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* End of global resets and containers */
 
 .wrapper section, .wrapper header {
     height: 100%;
@@ -52,11 +55,11 @@
 .dashboard-grid {
     padding: .7em;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 30% 40% 30%;
     grid-template-rows: 2fr 12fr;
     grid-template-areas: 
-    "status ."
-    "editor editor";
+    ". status ."
+    "editor editor editor";
     row-gap: 2em;
 }
 
@@ -73,49 +76,71 @@
 /* Status box */
 
 #status {
+    border: 1px solid lightgray;
+    border-radius: 10px;
     grid-area: status;
-    display: flex;
+    height: fit-content !important;
     /* border: 2px solid red; */
 }
 
+#status > h2 {
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
 #status > div {
-    border: 1px solid lightgray;
-    flex-basis: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 20px;
     /* border:1px solid black; */
 }
 
-#status > div:first-child {
+/* #status > div:first-child {
     border-radius: 10px 0 0 10px;
 }
 
 #status > div:last-child {
     border-radius: 0 10px 10px 0;
-}
+} */
 
-#status > div div {
+#status > div > div {
     /* border: 1px solid lightgray; */
-    flex-basis: 50%;
-}
-
-#status > div div:first-child {
-    background: #655DCC;
-    align-self: stretch;
+    /* background: #655DCC; */
+    /* align-self: stretch; */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    gap: 1.6em;
 }
 
-#status > div:first-child div:first-child {
-    border-radius: 10px 0 0 10px;
+#status .icon {
+    /* font-size: small; */
+    opacity: 0.8;
+    border: 1px solid lightgray;
+    padding: 1em;
+    border-radius: 50%;
+    color: #655DCC;
 }
 
-#status > div div:last-child {
+#status > div > div > div:last-child > div:first-child{
+    opacity: 0.6;
+}
+
+#status > div > div > div:last-child > div:last-child {
+    font-size: xx-large;
     font-weight: bold;
 }
+
+/* #status > div:first-child div:first-child {
+    border-radius: 10px 0 0 10px;
+} */
+
 
 /* End of status box */
 
