@@ -76,15 +76,17 @@
 /* Status box */
 
 #status {
-    border: 1px solid lightgray;
+    border: 1px solid darkgray;
     border-radius: 10px;
     grid-area: status;
     height: fit-content !important;
+    box-shadow: 1px 1px 5px lightgray;
     /* border: 2px solid red; */
 }
 
 #status > h2 {
-    border-bottom: 1px solid lightgray;
+    background: rgba(211, 211, 211, 0.397);
+    border-bottom: 1px solid darkgray;
     padding: 20px 0;
     margin-bottom: 20px;
     word-spacing: 3px;
@@ -125,7 +127,8 @@
     border: 1px solid lightgray;
     padding: 1em;
     border-radius: 50%;
-    color: #655DCC;
+    background: #655DCC;
+    color: white;
 }
 
 #status > div > div > div:last-child > div:first-child{
