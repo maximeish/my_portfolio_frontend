@@ -154,7 +154,7 @@
 #editor {
     border: 1px solid lightgray;
     border-radius: 10px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .tabs-wrapper {
@@ -190,7 +190,6 @@
 .tabs-wrapper div:last-child {
     border-top-right-radius: 10px;
 }
-
 
 .tab-panel {
     height: 85%;
