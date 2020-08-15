@@ -129,7 +129,6 @@ const deletePost = event => {
 
 // getting posts
 
-let count = 0;
 const getPosts = () => {
     database
         .collection('posts')
