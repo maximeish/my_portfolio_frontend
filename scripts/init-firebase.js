@@ -10,7 +10,7 @@ firebase.initializeApp({
     measurementId: "G-94LP44ZN00"
 });
 
-firebase.analytics();
+// firebase.analytics();
 
 const database = firebase.firestore();
 const storage = firebase.storage();
