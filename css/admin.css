@@ -154,7 +154,7 @@
 #editor {
     border: 1px solid lightgray;
     border-radius: 10px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .tabs-wrapper {
@@ -172,7 +172,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: #eee;
+    background: white;
     border-left:1px solid lightgray;
     border-right:1px solid lightgray;
     border-top:1px solid lightgray;
@@ -191,7 +191,6 @@
     border-top-right-radius: 10px;
 }
 
-
 .tab-panel {
     height: 85%;
     font-size: large;
@@ -205,8 +204,8 @@
     font-size: 1.1em;
     border-radius: 10px;
     /* margin: 10px; */
-    padding: 10px;
-    background: lightgray;
+    padding: 15px 10px;
+    background: rgb(233, 233, 233);
     display: flex;
     align-items: center;
     justify-content: space-evenly;

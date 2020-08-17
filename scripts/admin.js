@@ -9,7 +9,7 @@ const showPanel = (panelIndex, colorCode) => {
     });
 
     tabTitles[panelIndex].style.backgroundColor = colorCode;
-    tabTitles[panelIndex].style.color = '#222';
+    tabTitles[panelIndex].style.color = '#fefefe';
 
     tabPanels.forEach(node => {
         node.style.display = 'none';
@@ -20,7 +20,7 @@ const showPanel = (panelIndex, colorCode) => {
     tabPanels[panelIndex].style.backgroundColor = colorCode;
 }
 
-showPanel(0, '#C5CC5D');
+showPanel(0, '#837DD6');
 
 
 // ** database functions ** //
@@ -142,7 +142,7 @@ const getPosts = () => {
                     <div class='blog-post displayMod' data-identifier="${doc.id}">
                         <div>${doc.data().title}</div>
                         <div>${doc.data().paragraphs.toString().split(' ').splice(0, 5).join(" ")}...</div>
-                        <div><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></div>
+                        <div><i id="a_${doc.id}" class="fa fa-trash fa-lg fa-danger"></i></div>
                         <div><i id="a_${doc.id}-${doc.id}" class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
                 blogPostsWrapper.appendChild(div);
