@@ -260,6 +260,10 @@
         transform: translateX(100%);
         transition: all 0.5s ease-in-out;
     }
+
+    #admin-link {
+        flex-basis: 15% !important;
+    }
 }
 
 .navbar-active {

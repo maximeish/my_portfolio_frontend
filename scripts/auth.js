@@ -1,11 +1,16 @@
+var globalUser;
 // redirect to blog page if user is authenticated
-firebase.auth().onAuthStateChanged(user =>
-    user ? window.location.href = './blog.html' 
-    : console.log('User not signed in')
-);
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        // window.location.href = './blog.html';
+        globalUser = user;
+    }
+
+    else console.log('User not signed in')
+});
+
 
 const provider = new firebase.auth.GoogleAuthProvider();
-
 
 // remove the error on input change
 const onInputChange = () => document.querySelector('#notification').setAttribute('hidden', true);
@@ -39,8 +44,8 @@ function loginUsingGoogle() {
 
 
 //log in the user
-const login = (email, password) => {
-    firebase
+const login = (email, password, role) => {
+        firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then(() => console.log('Login successful'))
