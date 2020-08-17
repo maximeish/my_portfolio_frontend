@@ -20,7 +20,7 @@ const showPanel = (panelIndex, colorCode) => {
     tabPanels[panelIndex].style.backgroundColor = colorCode;
 }
 
-showPanel(0, '#655DCC');
+showPanel(0, '#837DD6');
 
 
 // ** database functions ** //
