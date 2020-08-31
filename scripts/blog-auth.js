@@ -29,6 +29,28 @@ database
     });
 
 
+firebase.auth().onAuthStateChanged(user => {
+    if(user) {
+        database
+            .collection('users')
+            .doc(user.email)
+            .get()
+            .then(doc => {
+                if (doc) {
+                    document.querySelector('#user-settings a').innerHTML += " " + doc.data().username;
+                } else {
+                    console.log('No user found')
+                }
+            })
+            .catch(error => {
+                console.log("Error getting user data: ", error);
+            });
+
+    }
+})
+
+
+
  
 async function blogAuth() {
     firebase.auth().onAuthStateChanged(() => {

@@ -60,6 +60,12 @@
     height: auto;
 }
 
+
+#paragraphs {
+    font-size: 18px;
+    line-height: 1.5em;
+}
+
 #content1 {
     flex-basis: 50%;
     letter-spacing: 1px;
@@ -149,10 +155,10 @@
     grid-template-areas: 
     "user-image user-name user-name"
     "user-image user-comment user-comment"
-    "user-image date-posted date-posted"
-    "user-image like-count like-btn";
+    "user-image date-posted date-posted";
     justify-items: center;
     align-items: center;
+    grid-row-gap: 10px;
 }
 
 .user-image {
@@ -226,4 +232,19 @@
 
 #admin-link {
     flex-basis: 15% !important;
+}
+
+@media (max-width: 680px) {
+    .comment-grid {
+        width: 95%;
+    }
+
+    .user-image img {
+        width: 50%;
+        height: auto;
+    }
+
+    .user-comment {
+        font-size: 1em;
+    }
 }

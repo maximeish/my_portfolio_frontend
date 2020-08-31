@@ -74,10 +74,27 @@
     margin-right: 6em;
 }
 
+
 .nav-link {
     text-decoration: none;
     color: #333;
     font-size: large;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #6B27A8;
+}
+
+.current-page {
+    background: #8761A8;
+    color: #fefefe;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.current-page:hover {
+    color: #fefefe;
 }
 
 .burger {

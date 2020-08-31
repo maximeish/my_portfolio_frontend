@@ -18,42 +18,53 @@
     <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
     <script defer src="../scripts/init-firebase.js"></script>
     <script defer src="../scripts/admin.js"></script>
+    <script defer src="../scripts/admin-auth.js"></script>
 </head>
 <body>
     
     <main class="wrapper">
         <header>
+            <div>
+                <a href="./blog.html">
+                    <img src="../assets/logo/logo.svg" class="logo" />
+                </a>
+            </div>
             <div>Admin Dashboard</div>
         </header>
         <section class="dashboard-grid">
-            <div id="status">
-                <h2>Portfolio Status</h2>
-                <div>
+            <div>
+                <div id="status">
+                    <h2>Portfolio Status</h2>
                     <div>
-                        <div class="icon"><i class="fa fa-newspaper-o fa-lg"></i></div>
                         <div>
-                            <div>Posts</div>
-                            <div id="posts-count">0</div>
+                            <div class="icon"><i class="fa fa-newspaper-o fa-lg"></i></div>
+                            <div>
+                                <div>Posts</div>
+                                <div id="posts-count">0</div>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="icon"><i class="fa fa-envelope fa-lg"></i></div>
                         <div>
-                            <div>Messages</div>
-                            <div id="messages-count">0</div>
+                            <div class="icon"><i class="fa fa-envelope fa-lg"></i></div>
+                            <div>
+                                <div>Messages</div>
+                                <div id="messages-count">0</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <a href="#editor" class="admin-tools">Admin Tools <i class="fa fa-arrow-circle-down fa-lg"></i></a>
             </div>
+
             <div id="editor">
                 <div class="tabs-wrapper">
-                    <div onclick="showPanel(0, '#837DD6')" class="tab-title">Blog Posts</div>
-                    <div onclick="showPanel(1, '#837DD6')" class="tab-title">Form Messages</div>
-                    <div onclick="showPanel(2, '#837DD6')" class="tab-title">Create Post</div>
+                    <div onclick="showPanel(0, '#837DD6')" class="tab-title">Posts</div>
+                    <div onclick="showPanel(1, '#837DD6')" class="tab-title">Messages</div>
+                    <div onclick="showPanel(2, '#837DD6')" class="tab-title">Add Post</div>
+                    <div onclick="showPanel(3, '#837DD6')" class="tab-title">Users (<span id="users-count">0</span>)</div>
                 </div>
 
                 <div id="blog-posts" class="tab-panel"></div>
-                <div class="tab-panel">
+                <div style="text-align: left;" class="tab-panel">
                     <table>
                         <thead>
                             <tr>
@@ -61,6 +72,7 @@
                                 <th>Message</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="messages">
@@ -69,13 +81,27 @@
                     </table>
                 </div>
                 <div id="post-creator" class="tab-panel">
-                    <form id="post-creatorForm" method="POST" action="#">
-                        <div>Title</div><div><input type="text" name="title" id="title"></div>
-                        <div>Image</div><div><input type="file" name="image" id="image"></div>
-                        <div>Paragraphs</div><div><textarea rows="5" type="text" name="paragraphs" id="paragraphs"></textarea></div>
-                        <div>Date Posted</div><div><input type="datetime-local" name="date_posted" id="date_posted"></div>
+                    <form id="post-creatorForm" method="POST">
+                        <div>Title</div><div><input type="text" name="title" id="title" required></div>
+                        <div>Image</div><div><input type="file" name="image" id="image" required></div>
+                        <div>Body</div><div><textarea rows="27" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
                         <div><button>Post</button></div>
                     </form>
+                </div>
+                <div style="text-align: left;" id="user-manager" class="tab-panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users">
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>

@@ -30,6 +30,7 @@
             </div>
             
             <ul class="nav-links">
+                <li><a class="nav-link current-page" href="./#">Homepage</a></li>
                 <li><a class="nav-link" href="./#projects">My Projects</a></li>
                 <li><a class="nav-link" href="./#contact">Send Me a Message</a></li>
                 <li><a class="nav-link" href="./pages/blog.html">My Blog</a></li>
@@ -174,6 +175,11 @@
                         Thanks for your message. <br>
                         <span>I'll be in touch with you soon</span>
                     </div>
+
+                    <div id="alert-fail">
+                        The name should not contain numbers
+                    </div>
+
                     
                     <form id="contact-form" class="form-container">
                         <div class="name-field">
@@ -188,12 +194,12 @@
                         
                         <div class="phone-field">
                             <label  class="field-text" for="phone">Telephone <span>(optional)</span></label><br>
-                            <input type="tel" name="phone" id="phone" placeholder="With country code" />
+                            <input type="tel" name="phone" id="phone" />
                         </div>
 
                         <div class="message-field">
                             <label class="field-text" for="message">Message</label><br>
-                            <textarea rows="3" cols="45" name="message" id="message"></textarea>
+                            <textarea rows="3" cols="45" name="message" id="message" required></textarea>
                         </div>
 
                         <div class="submit-btn-field">
@@ -201,19 +207,20 @@
                         </div>
                     </form>
                 </div>
-                
-                <div class="links-section">
+            </div>
+
+
+
+            <div class="links-section">
                     <header>You can also reach out to me via...</header>
-                    <div><a href="https://twitter.com/"><i class="fa fa-twitter fa-lg"><span class="no-disp"> Twitter</span></i></a></div>
+                    <div><a href="https://twitter.com/maximeish"><i class="fa fa-twitter fa-lg"><span class="no-disp"> Twitter</span></i></a></div>
                     <div><a href="https://linkedin.com/in/maximeish"><i class="fa fa-linkedin fa-lg"><span class="no-disp"> Linkedin</span></i></a></div>
-                    <div><a href="mailto:mxmishimwe5@gmail.com"><i class="fa fa-envelope fa-lg"><span class="no-disp"> Email</span></i></a></div>
+                    <div><a title="mxmishimwe5@gmail.com" href="mailto:mxmishimwe5@gmail.com"><i class="fa fa-envelope fa-lg"><span class="no-disp"> Email</span></i></a></div>
                     <div><a href="https://facebook.com/mqm111"><i class="fa fa-facebook fa-lg"><span class="no-disp"> Facebook</span></i></a></div>
                     <div><a href="https://wa.me/+250787720495"><i class="fa fa-whatsapp fa-lg"><span class="no-disp"> WhatsApp</span></i></a></div>
-                    <div><a href="tel:+250787720495"><i class="fa fa-phone fa-lg"><span class="no-disp"> Phone</span></i></a></div>
-                </div>
+                    <div><a title="+250787720495" href="tel:+250787720495"><i class="fa fa-phone fa-lg"><span class="no-disp"> Phone</span></i></a></div>
             </div>
         </section>
-        <button id="show">show messages</button>
     </main>
 </body>
 </html>

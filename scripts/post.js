@@ -33,10 +33,6 @@ async function loadComments() {
                             <div class="user-name">${doc.data().username}</div>
                             <div class="user-comment">${doc.data().message}</div>
                             <div class="date-posted">${date}</div>
-                            <div class="like-count">${doc.data().likes} likes</div>
-                            <div class="like-btn">
-                                <a id="like-btn"><i class="fa fa-thumbs-up"></i> Like</a>
-                            </div>
                         </div>
                     `;
                     commentsWrapper.appendChild(div);

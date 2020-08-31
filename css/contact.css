@@ -11,10 +11,9 @@
 }
 
 #contact {
-    /* border: 3px solid red; */
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -34,6 +33,21 @@
     transition: all 0.3s ease-in-out;
 }
 
+#alert-fail {
+    opacity: 0;
+    display: none;
+    word-spacing: 3px;
+    padding: 15px;
+    font-size: large;
+    background: rgba(255, 0, 0, 0.5);
+    color: white;
+    margin: 1.2em auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
 #alert-success span {
     opacity: 0.9;
     font-size: small;
@@ -42,7 +56,7 @@
 .form-wrapper {
     /* border: 2px solid red; */
     height: 95%;
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,6 +64,7 @@
 }
 
 .form-container {
+    /* border: 2px solid red; */
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
@@ -82,7 +97,7 @@
 
 .field-text {
     font-weight: lighter;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 label[for=phone] span {
@@ -97,7 +112,7 @@ input, textarea {
     width: 90%;
     margin-top: 15px;
     padding: 5px 5px;
-    font-size: x-large;
+    font-size: 16px;
 }
 
 input:focus, textarea:focus {
@@ -190,6 +205,7 @@ button[type=submit]:hover {
 }
 
 .links-section {
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -266,6 +282,7 @@ button[type=submit]:hover {
         align-items: center;
         justify-content: center;
     }
+    
     .no-disp {
         display: none;
     }
@@ -292,6 +309,10 @@ button[type=submit]:hover {
 }
 
 @media (max-width: 835px) {
+    .form-wrapper {
+        width: 90%;
+    }
+
     .form-container {
         /* border: 1px solid red; */
         grid-template-columns: auto;

@@ -19,33 +19,59 @@
         const phone = getValues('phone'), message = getValues('message');
 
 
-        //save Message
-        saveMessage(name, email, phone, message);
+        let nameRegexp = /^[A-Za-z .\-]+$/ig;
+        
+        if (Boolean(name.match(nameRegexp))) {
+            saveMessage(name, email, phone, message);
 
-        //add fade in effects to sections
-        ['#alert-success', '#submit-btn', '.small-title'].forEach((section, index) => {
-            if (document.querySelector(section).style.animation)
-                document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
-            else 
-                document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
-        });
+            //add fade in effects to sections
+            ['#alert-success', '#submit-btn', '.small-title'].forEach((section, index) => {
+                if (document.querySelector(section).style.animation)
+                    document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
+                else 
+                    document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
+            });
 
-        //alert user that message was successfully sent and hide submit-btn
-        document.querySelector('#alert-success').style.display = 'block';
-        document.querySelector('#submit-btn').style.display = 'none';
-        document.querySelector('#submit-btn').style.opacity = 0;
-        document.querySelector('.small-title').style.display = 'none';
-        document.querySelector('.small-title').style.opacity = 0;
+            //alert user that message was successfully sent and hide submit-btn
+            document.querySelector('#alert-success').style.display = 'block';
+            document.querySelector('#submit-btn').style.display = 'none';
+            document.querySelector('#submit-btn').style.opacity = 0;
+            document.querySelector('.small-title').style.display = 'none';
+            document.querySelector('.small-title').style.opacity = 0;
 
-        // hide alert after and show submit-btn after 3s
-        setTimeout(() => {
-            document.querySelector('#alert-success').style.display = 'none';
-            document.querySelector('#submit-btn').style.display = 'block';
-            document.querySelector('.small-title').style.display = 'block';
+            // hide alert and show submit-btn after 3s
+            setTimeout(() => {
+                document.querySelector('#alert-success').style.display = 'none';
+                document.querySelector('#submit-btn').style.display = 'block';
+                document.querySelector('.small-title').style.display = 'block';
 
-            
-            document.querySelector('#contact-form').reset();
-        }, 5000);
+                
+                document.querySelector('#contact-form').reset();
+            }, 5000);
+        } else {
+
+            //add fade in effects to sections
+            ['#alert-fail', '#submit-btn', '.small-title'].forEach((section, index) => {
+                if (document.querySelector(section).style.animation)
+                    document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
+                else 
+                    document.querySelector(section).style.animation = `sectionFadeIn 0.5s ease-in-out forwards ${index / 7}s`;
+            });
+
+            //alert user that message was successfully sent and hide submit-btn
+            document.querySelector('#alert-fail').style.display = 'block';
+            document.querySelector('#submit-btn').style.display = 'none';
+            document.querySelector('#submit-btn').style.opacity = 0;
+            document.querySelector('.small-title').style.display = 'none';
+            document.querySelector('.small-title').style.opacity = 0;
+
+            // hide alert and show submit-btn after 3s
+            setTimeout(() => {
+                document.querySelector('#alert-fail').style.display = 'none';
+                document.querySelector('#submit-btn').style.display = 'block';
+                document.querySelector('.small-title').style.display = 'block';
+            }, 5000);
+        }
     }
 
     //Save (send) messages to firebase collection
@@ -63,12 +89,3 @@
     }
     
     form.addEventListener('submit', submitForm);
-    
-    // document.querySelector('#show').addEventListener('click', () => {
-    //     database
-    //         .collection("messages")
-    //         .get()
-    //         .then(querySnapshot => {
-    //             querySnapshot.forEach(doc => console.log({ id: doc.id, ...doc.data() }));
-    //         });
-    // })
