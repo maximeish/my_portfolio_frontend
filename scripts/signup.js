@@ -4,8 +4,6 @@ firebase.auth().onAuthStateChanged(user => {
         window.location.href = './blog.html';
         globalUser = user;
     }
-
-    else console.log('User not signed in')
 });
 const notif = document.querySelector('#notification');
 // Sign user up

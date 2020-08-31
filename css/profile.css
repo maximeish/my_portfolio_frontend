@@ -1,0 +1,54 @@
+input {
+	padding: 5px;
+	font-size: 18px;
+	display: block;
+	margin: 0 auto;
+}
+
+button {
+	box-shadow: 2px 2px 3px lightgrey;
+	border-radius: 5px;
+	display: block;
+	margin: 24px auto;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+
+#update:hover {
+	background: green;
+	color: white;
+}
+
+#delete-account {
+	font-weight: bold;
+}
+
+#delete-account:hover{
+	background: rgba(255, 0, 0, 0.7);
+	color: white;
+}
+
+
+.wrapper {
+	height: 100vh;
+}
+
+#update-form {
+	margin: 24px auto;
+}
+
+.settings {
+	text-align: center;
+	height: 75vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#header {
+	height: 25vh;
+}

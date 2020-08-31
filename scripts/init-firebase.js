@@ -12,6 +12,10 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var firebaseGlobalObject = {}
+
+firebaseGlobalObject = firebase;
 // firebase.analytics();
 
 // Initialize Cloud Firestore through Firebase

@@ -2,6 +2,14 @@
 const tabTitles = document.querySelectorAll('#editor .tab-title');
 const tabPanels = document.querySelectorAll('#editor .tab-panel');
 
+// window.indexedDB.open('firebaseLocalStorageDb', 1)
+//     .then(db => {
+//         console.log(db)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+
 const showPanel = (panelIndex, colorCode) => {
     tabTitles.forEach(node => {
         node.style.backgroundColor = '';
@@ -47,17 +55,18 @@ const updatePost = event => {
     docRef.get()
         .then(doc => {
             title = doc.data().title;
+            author = doc.data().author;
             paragraphs = doc.data().paragraphs;
             date_posted = doc.data().date_posted;
-            filename = doc.data().filename;
+            imageFilename = doc.data().imageFilename;
             wrapper.innerHTML = `
                 <div>
+                    <div id="successful-update">Post updated successfully</div>
                     <form id="postUpdater" method="POST" action="#" onsubmit="(event) => noRefresh(event)">
                         <div>Title</div><div><input type="text" name="title" id="title_update" value="${title}"></div>
-                        <div>Paragraphs</div><div><textarea rows="5" type="text" name="paragraphs" id="paragraphs_update">${paragraphs}</textarea></div>
+                        <div>Author</div><div><input type="text" name="author" id="author_update" value="${author}"></div>
+                        <div>Body</div><div><textarea class="new-body-textarea" rows="27" type="text" name="paragraphs" id="paragraphs_update">${paragraphs}</textarea></div>
                         <div>New image</div><div><input type="file" name="image" id="image_update" /></div>
-                        <div>Date posted</div><div><input type="datetime-local" name="date_posted" id="date_posted_update" value="${date_posted}"></div>
-                        <div>File name</div><div><input type="text" name="filename" id="filename_update" value="${filename}"></div>
                         <div><button>Update Post</button></div>
                     </form>
                 </div>
@@ -65,18 +74,23 @@ const updatePost = event => {
             document.querySelectorAll('.displayMod').forEach(postDiv => postDiv.style.display = 'none');
             
             postsWrapper.prepend(wrapper);
+
+            document.querySelector('#successful-update').style.display = 'none';
             
             document.querySelector('#postUpdater').addEventListener('submit', e => {
                 e.preventDefault();
-                const title = document.querySelector('#title_update').value;
-                const paragraphs = document.querySelector('#paragraphs_update').value;
-                const date_posted = document.querySelector('#date_posted_update').value;
-                const filename = document.querySelector('#filename_update').value;
+                const title = document.querySelector('#title_update').value || title;
+                const author = document.querySelector('#author_update').value || author;
+                const paragraphs = document.querySelector('#paragraphs_update').value || paragraphs;
+                // const date_posted = date_posted;
                 const image = document.querySelector('#image_update').files[0];
-                const newImageFilename = 'posts-images/' + image.name;
-                const imagesRef = storageRef.child(newImageFilename);
+                let newImageFilename, imagesRef;
+                if (image !== undefined) {
+                    newImageFilename = 'posts-images/' + image.name;
+                    imagesRef = storageRef.child(newImageFilename);
+                }
 
-                if (title && paragraphs && date_posted && filename) {
+                if (title && paragraphs && date_posted) {
                     database
                         .collection('posts')
                         .doc(id)
@@ -84,11 +98,11 @@ const updatePost = event => {
                             title,
                             paragraphs,
                             date_posted,
-                            filename,
-                            imageFilename: newImageFilename
+                            author,
+                            imageFilename: newImageFilename || imageFilename
                         })
                         .then(() => {
-                            if (image) {
+                            if (image !== undefined) {
                                 const existingImageRef = storageRef.child(doc.data().imageFilename);
                                 existingImageRef.delete()
                                     .then(() => {
@@ -102,6 +116,14 @@ const updatePost = event => {
                                         })
                                     })
                                     .catch(err => console.log('Error deleting the existing image: ', err));
+                            } else {
+                                document.querySelector('#successful-update').style.animation = 'fadeInNotification 1s linear 1';
+
+                                document.querySelector('#successful-update').style.display = 'block';
+
+                                setTimeout(() => {
+                                    location.reload();
+                                }, 2000);
                             }
                         })
                         .catch(err => console.log('Error updating document: ', err));
@@ -120,11 +142,38 @@ const deletePost = event => {
     database
         .collection('posts')
         .doc(`${(event.target.id).toString().split('_')[1]}`).delete()
-        .then(() => console.log('Post successfully deleted'))
+        .then(() => {
+            console.log('Post successfully deleted')
+            location.reload();
+        })
         .catch(err => console.log('Error deleting document: ', err));
 }
 
 // end of delete post
+
+
+// delete message
+
+const deleteMessage = event => {
+    console.log(`id to delete ${(event.target.id).toString().split('_')[1]}`)
+    database
+        .collection('messages')
+        .doc(`${(event.target.id).toString().split('_')[1]}`).delete()
+        .then(() => {
+            console.log('Message successfully deleted')
+            location.reload();
+        })
+        .catch(err => console.log('Error deleting document: ', err));
+}
+
+
+// delete message
+
+const deleteUser = event => {
+    console.log('not yet implemented')
+}
+
+
 
 
 // getting posts
@@ -140,8 +189,8 @@ const getPosts = () => {
                 const div = document.createElement('div');
                 div.innerHTML = `
                     <div class='blog-post displayMod' data-identifier="${doc.id}">
-                        <div>${doc.data().title}</div>
-                        <div>${doc.data().paragraphs.toString().split(' ').splice(0, 5).join(" ")}...</div>
+                        <div class="post-title">${doc.data().title}</div>
+                        <div class="post-body">${doc.data().paragraphs.toString().split(' ').splice(0, 5).join(" ")}...</div>
                         <div><i id="a_${doc.id}" class="fa fa-trash fa-lg fa-danger"></i></div>
                         <div><i id="a_${doc.id}-${doc.id}" class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
@@ -176,8 +225,10 @@ const getMessages = () => {
                     <td>${doc.data().message}</td>
                     <td>${doc.data().email}</td>
                     <td>${doc.data().phone}</td>
+                    <td><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></td>
                 `;
                 messagesWrapper.appendChild(row);
+                document.querySelector(`#a_${doc.id}`).addEventListener('click', e => deleteMessage(e));
             });
         })
         .catch(error => {
@@ -190,6 +241,41 @@ getMessages();
 // end of get messages
 
 
+
+
+// get messages
+
+const getUsers = () => {
+    database
+        .collection('users')
+        .get()
+        .then(docs => {
+            docs.forEach(doc => {
+                document.querySelector('#users-count').innerHTML = parseInt(document.querySelector('#users-count').innerHTML) + 1;
+                const usersWrapper = document.querySelector('#users');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${doc.data().username}</td>
+                    <td>${doc.id}</td>
+                    <td>${doc.data().role}</td>
+                    <td><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></td>
+                `;
+                usersWrapper.appendChild(row);
+                // document.querySelector(`#a_${doc.id}`).addEventListener('click', e => deleteUser(e));
+            });
+        })
+        .catch(error => {
+            console.log("Error getting messages: ", error);
+        });
+}
+
+getUsers();
+
+// end of get messages
+
+
+
+
 // post creator 
 
 
@@ -200,7 +286,7 @@ const createPost = () => {
         e.preventDefault();
         const title = document.querySelector('#title').value;
         const paragraphs = document.querySelector('#paragraphs').value;
-        const date_posted = document.querySelector('#date_posted').value;
+        const date_posted = new Date();
         const image = document.querySelector('#image').files[0];
         const imageFilename = 'posts-images/' + image.name;
         const imagesRef = storageRef.child(`posts-images/${image.name}`);
