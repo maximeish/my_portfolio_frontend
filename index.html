@@ -22,19 +22,21 @@
     <script defer src="./scripts/app.js"></script>
     <script defer src="./scripts/messages.js"></script>
 </head>
-<body style="overflow-x: hidden;">
-    <main class="wrapper" style="overflow-x: hidden;">
-        <nav class="navbar" style="overflow-x: hidden;">
+<body>
+    <main class="wrapper">
+        <nav class="navbar">
             <div class="logo">
                 <img src="./assets/logo/logo.svg" alt="logo" />
             </div>
             
-            <ul class="nav-links">
+            <!-- Mobile view -->
+            <ul class="nav-links no-overflow">
                 <li><a class="nav-link current-page" href="./#">Homepage</a></li>
                 <li><a class="nav-link" href="./#projects">My Projects</a></li>
                 <li><a class="nav-link" href="./#contact">Send Me a Message</a></li>
                 <li><a class="nav-link" href="./pages/blog.html">My Blog</a></li>
             </ul>
+
             <div class="burger">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -73,9 +75,8 @@
                 <p class="intro-desc">Little more about myself, I’m a junior full-stack web developer with currently
                     a few projects  that I’ve worked on, using PHP as a back-end language 
                     and several other languages to the front-end. 
-                    I am passionate about improving myself and
-                    learning new concepts and skills when it comes to coding.
-                    And also I thrive to see the work I’ve started through to the end.</p>
+                    I always seek to improve myself and
+                    learn new concepts and skills when it comes to software development.</p>
             </div>
             <div class="skills-table">
                 <div>
@@ -87,23 +88,25 @@
                     <h3 id="subtitle1">Languages I use</h3>
                     <ul id="list1">
                         <li>SQL</li>
+                        <li>noSQL</li>
                     </ul>
-                    <h3 id="subtitle2">Dev Tools</h3>
+                    <h3 id="subtitle2">Dev Tools & Databases</h3>
                     <ul id="list2">
                         <li>Visual Studio Code</li>
                         <li>Sublime Text</li>
                         <li>MariaDB</li>
+                        <li>MongoDB</li>
                     </ul>
                 </div>
                 <div>
                     <span id="icon"><i class="fa fa-gear"></i></span>
                     <h2 id="big-title">Back-end Developer</h2>
                     <p id="small-desc">As I mentioned, I mostly use PHP but
-                        I’m currently learning Nodejs too</p>
-                    <h3 id="subtitle1">Languages I use</h3>
+                        I’m currently learning Express.js web framework for Node.js too</p>
+                    <h3 id="subtitle1">Frameworks & Languages I use</h3>
                     <ul id="list1">
                         <li>PHP</li>
-                        <li>NodeJS</li>
+                        <li>Express.js</li>
                     </ul>
                     <h3 id="subtitle2">Dev Tools</h3>
                     <ul id="list2">
@@ -115,20 +118,20 @@
                 <div>
                     <span id="icon"><i class="fa fa-code" aria-hidden="true"></i></span>
                     <h2 id="big-title">Front-end Developer</h2>
-                    <p id="small-desc">I work hard towards having a nicely laid out professional- looking UI, designed and built using modern tools</p>
+                    <p id="small-desc">I work hard towards having a nicely laid out professional-looking UI, designed and built using modern tools</p>
                     <h3 id="subtitle1">Languages I use</h3>
                     <ul id="list1">
                         <li>HTML5</li>
                         <li>CSS3 (With Sass)</li>
                         <li>Bootstrap</li>
-                        <li>JavaScript (With ES6)</li>
+                        <li>JavaScript (With ES2015+)</li>
                         <li>jQuery</li>
                         <li>React</li>
                     </ul>
                     <h3 id="subtitle2">Dev Tools</h3>
                     <ul id="list2">
                         <li>Figma</li>
-                        <li>VS Code</li>
+                        <li>Visual Studio Code</li>
                         <li>Sublime Text</li>
                         <li>Codepen</li>
                         <li>Github</li>

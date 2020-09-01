@@ -10,9 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener('click', () => {
         //toggle the navigation by clicking on burger button
         navbar.classList.toggle('navbar-active');
-        wrapper.classList.toggle('no-overflow');
-        nav.classList.toggle('no-overflow');
+        // wrapper.classList.toggle('no-overflow');
+        // nav.classList.toggle('no-overflow');
+        //navbar.classList.toggle('no-overflow');
+        setTimeout(() => {
         navbar.classList.toggle('no-overflow');
+        }, 250);
+
 
         
         //change some coloring
@@ -31,8 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach((link, index) => {
             if (link.style.animation)
                 link.style.animation = '';
-            else 
+            else {
                 link.style.animation = `navbarSlide 0.5s ease-in-out forwards ${index / 7 + .3}s`;
+
+            }
         });
     });
 });
