@@ -63,11 +63,13 @@ const updatePost = event => {
                 <div>
                     <div id="successful-update">Post updated successfully</div>
                     <form id="postUpdater" method="POST" action="#" onsubmit="(event) => noRefresh(event)">
-                        <div>Title</div><div><input type="text" name="title" id="title_update" value="${title}"></div>
-                        <div>Author</div><div><input type="text" name="author" id="author_update" value="${author}"></div>
-                        <div>Body</div><div><textarea class="new-body-textarea" rows="27" type="text" name="paragraphs" id="paragraphs_update">${paragraphs}</textarea></div>
-                        <div>New image</div><div><input type="file" name="image" id="image_update" /></div>
-                        <div><button>Update Post</button></div>
+                        <div class="title-image-fields">
+                            <div>Title</div><div><input type="text" name="title" id="title_update" value="${title}"></div>
+                            <div>Author</div><div><input type="text" name="author" id="author_update" value="${author}"></div>
+                            <div>New image</div><div><input type="file" name="image" id="image_update" /></div>
+                        </div>
+                        <div>Body</div><div><textarea class="new-body-textarea" style="height: 70vh" type="text" name="paragraphs" id="paragraphs_update">${paragraphs}</textarea></div>
+                        <div><button class="post-btn">Update Post</button></div>
                     </form>
                 </div>
             `;
@@ -191,7 +193,7 @@ const getPosts = () => {
                     <div class='blog-post displayMod' data-identifier="${doc.id}">
                         <div class="post-title">${doc.data().title}</div>
                         <div class="post-body">${doc.data().paragraphs.toString().split(' ').splice(0, 5).join(" ")}...</div>
-                        <div><i id="a_${doc.id}" class="fa fa-trash fa-lg fa-danger"></i></div>
+                        <div><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></div>
                         <div><i id="a_${doc.id}-${doc.id}" class="fa fa-pencil fa-lg"></i></div>
                     </div>`;
                 blogPostsWrapper.appendChild(div);
