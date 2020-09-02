@@ -1,6 +1,7 @@
 document.querySelector('#admin-link').style.display = 'none';
 const arrDates = [];
 let count = 0;
+let imageRef;
 const postsWrapper = document.querySelector('.posts-wrapper');
 
 database
@@ -8,20 +9,41 @@ database
     .get()
     .then(result => {
         globalUser = globalUser || {email: null}
-        result.forEach(doc => {
-            arrDates.push(doc.data().date_posted.toString().split('-').join('').split('T').join('').split(':')[0]);
+        let counter = 0;
+        result.forEach(async doc => {
             
             const div = document.createElement('div');
+
+            // Date formatting
+            
             const date = doc.data().date_posted;
+            const first = date.toDate().toString().split(' ').slice(0, 4);
+            first[0] = first[0] + ",";
+            let second = date.toDate().toString().split(' ').slice(4, 5);
+            second = second.toString().split(':');
+            second.splice(2, 1);
+            let imgID = doc.data().title.toString().split(" ").join("-");
             div.innerHTML = `
+                <div class="image-preview" id="${imgID}"></div>
                 <h2>${doc.data().title}</h2>
-                <span>Posted on ${date.toString().split('T')[0]} at ${date.toString().split('T')[1]} by Maxime I.</span>
+                <span>Posted on ${first.join(" ") + " at " + second.join(":")} by Maxime I.</span>
                 <p>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(' ')}...</p>
                 <a href="./post.html?docID=${doc.id}&userEmail=${globalUser.email || null}">Read more</a>
             `;
             div.classList.add('post');
-            div.setAttribute('id', `a${arrDates[count++]}`);
+            // div.setAttribute('id', `a${arrDates[count++]}`);
             postsWrapper.appendChild(div);
+
+            // Get the image for post preview
+            imageRef = storageRef.child(doc.data().imageFilename);
+            let imgDiv = document.querySelector(`#${imgID}`);
+            await imageRef.getDownloadURL().then(url => {
+                imgDiv.innerHTML = `
+                    <img src="${url}" alt="" />
+                `;
+            }).catch(error => {
+                console.log('Error downloading image: ', error);
+            })
         });
         // Sort posts in chronological order
         const sortedPosts = arrDates.sort((a, b) => b - a);
@@ -31,6 +53,7 @@ database
 
 firebase.auth().onAuthStateChanged(user => {
     if(user) {
+        document.querySelector('#welcome-msg').style.display = 'none';
         database
             .collection('users')
             .doc(user.email)

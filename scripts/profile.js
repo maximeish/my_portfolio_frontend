@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(user => {
                         e.preventDefault();
                         notify('checking and saving data...', 'block');
                         let newUsername = document.querySelector('#new_username').value;
-                        let newEmail = document.querySelector('#new_email').value;
+                        let newEmail = undefined;
                         let currentPassword = document.querySelector('#current_password').value;
                         let newPassword = document.querySelector('#new_password').value;
 

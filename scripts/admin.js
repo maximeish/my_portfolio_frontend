@@ -286,18 +286,20 @@ const createPost = () => {
         e.preventDefault();
         const title = document.querySelector('#title').value;
         const paragraphs = document.querySelector('#paragraphs').value;
+        const author = 'Maxime I.';
         const date_posted = new Date();
         const image = document.querySelector('#image').files[0];
         const imageFilename = 'posts-images/' + image.name;
         const imagesRef = storageRef.child(`posts-images/${image.name}`);
 
 
-        if (title && paragraphs && date_posted && filename && imageFilename) {
+        if (title && paragraphs && date_posted && imageFilename) {
             // Add a new document with a generated id.
             database
                 .collection("posts")
                 .add({
                     title,
+                    author,
                     paragraphs,
                     date_posted,
                     imageFilename
@@ -308,6 +310,7 @@ const createPost = () => {
                         .then(result => {
                             console.log("Document written with ID: ", docRef.id);
                             console.log('Image uploaded successfully');
+                            location.reload();
                         })
                         .catch(err => console.log('Error uploading image:', err))
                 })
@@ -315,8 +318,6 @@ const createPost = () => {
         } else {
             console.log('Error: fill all the fields');
         }
-    
-        console.log(image, image.name);
     })
 }
 

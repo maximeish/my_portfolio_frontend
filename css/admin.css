@@ -201,6 +201,7 @@
     padding: 0.5em;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    background: #d7d4d4 !important;
 }
 
 .blog-post {
@@ -245,6 +246,17 @@
     cursor: pointer;
 }
 
+
+.title-image-fields {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1em auto;
+}
+
+.add-post-hr {
+    margin-bottom: 1em;
+}
 
 #successful-update {
     border-radius: 5px;
