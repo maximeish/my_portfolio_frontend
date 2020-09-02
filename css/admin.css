@@ -204,16 +204,24 @@
     background: #d7d4d4 !important;
 }
 
+table thead tr td {
+    text-align: left;
+}
+
 .blog-post {
     font-size: 1.1em;
     border-radius: 10px;
     /* margin: 10px; */
     padding: 15px 10px;
-    background: rgb(233, 233, 233);
+    background: #fefefe;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 15px;
+}
+
+.blog-post .fa-trash {
+    color: #FF4040;
 }
 
 .blog-post div {
@@ -254,9 +262,36 @@
     margin: 1em auto;
 }
 
-.add-post-hr {
-    margin-bottom: 1em;
+.post-btn {
+    padding: 0.5em;
+    background: #4E44D3;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
+
+
+#editor input, #editor textarea {
+    border: 1px solid lightgrey;
+    padding: 2px;
+    outline: none;
+}
+
+#editor input:focus, #editor textarea:focus{
+    box-shadow: 0 0 3px #4E44D3;
+}
+
+
+#messages tr td:nth-child(5) {
+    color: #FF4040;
+} 
+
+#users tr td:nth-child(4) {
+    color: #FF4040;
+}
+
+
 
 #successful-update {
     border-radius: 5px;
@@ -314,6 +349,57 @@ td {
 }
 
 /* End of editor box  */
+
+
+@media (max-width: 824px) {
+    .mobile-view-table thead {
+        display: none;
+    }
+
+    .mobile-view-table tr {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-bottom: 1em;
+        border-bottom: 1px solid darkgrey;
+        margin-bottom: 1em;
+    }
+
+    .mobile-view-table tr td:first-child {
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    #messages tr td:nth-child(3) {
+        letter-spacing: 1px;
+        font-style: italic;
+    }
+
+    #messages tr td:nth-child(4) {
+        opacity: 0.7;
+    }   
+
+
+    #messages tr td:nth-child(5) {
+        color: #FF4040;
+    } 
+
+    #users tr td:nth-child(3) {
+        opacity: 0.7;
+    }
+
+    #users tr td:nth-child(4) {
+        color: #FF4040;
+    }
+}
+
+@media (max-width: 995px) {
+    .title-image-fields {
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 595px) {
     #status {

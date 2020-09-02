@@ -65,7 +65,7 @@
 
                 <div id="blog-posts" class="tab-panel"></div>
                 <div style="text-align: left;" class="tab-panel">
-                    <table>
+                    <table class="mobile-view-table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -86,13 +86,12 @@
                             <div>Title</div><div><input type="text" name="title" id="title" required></div>
                             <div>Image</div><div><input type="file" name="image" id="image" required></div>
                         </div>
-                        <hr class="add-post-hr">
-                        <div>Body</div><div><textarea rows="30" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
-                        <div><button>Post</button></div>
+                        <div>Body</div><div><textarea style="height: 70vh;" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
+                        <div><button class="post-btn">Post</button></div>
                     </form>
                 </div>
                 <div style="text-align: left;" id="user-manager" class="tab-panel">
-                    <table>
+                    <table class="mobile-view-table">
                         <thead>
                             <tr>
                                 <th>Username</th>
