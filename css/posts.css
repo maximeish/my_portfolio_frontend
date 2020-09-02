@@ -64,6 +64,11 @@
 #paragraphs {
     font-size: 18px;
     line-height: 1.5em;
+    text-align: left;
+}
+
+#paragraphs ul {
+    margin-left: 1em !important;
 }
 
 #content1 {

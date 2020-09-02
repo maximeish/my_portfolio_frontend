@@ -82,9 +82,12 @@
                 </div>
                 <div id="post-creator" class="tab-panel">
                     <form id="post-creatorForm" method="POST">
-                        <div>Title</div><div><input type="text" name="title" id="title" required></div>
-                        <div>Image</div><div><input type="file" name="image" id="image" required></div>
-                        <div>Body</div><div><textarea rows="27" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
+                        <div class="title-image-fields">
+                            <div>Title</div><div><input type="text" name="title" id="title" required></div>
+                            <div>Image</div><div><input type="file" name="image" id="image" required></div>
+                        </div>
+                        <hr class="add-post-hr">
+                        <div>Body</div><div><textarea rows="30" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
                         <div><button>Post</button></div>
                     </form>
                 </div>

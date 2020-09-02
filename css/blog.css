@@ -69,6 +69,14 @@
 .link-header:hover {
     color: rgb(118, 118, 231);
 }
+.image-preview {
+    margin-bottom: 1em;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+}
 
 .posts-wrapper > h2 {
     font-weight: lighter;
@@ -76,6 +84,7 @@
     opacity: 0.7;
     margin: 50px auto 25px auto;
     letter-spacing: 2px;
+    flex-basis: 100%;
 }
 
 .post {
