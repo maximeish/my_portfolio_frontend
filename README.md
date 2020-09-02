@@ -4,7 +4,7 @@ A repository for my brand website
 
 # a blog and a portfolio (all features not fully implemented)
 
-> Quick Summary of what this does
+> Summary of what this does
 
 - This is a blog system that should allow a user to create and delete their own posts and also view posts written by other users and should be able to comment on them to give them feedback.
 
@@ -12,7 +12,7 @@ A repository for my brand website
 
 - The user is also able to cancel their subscription status.
 
-- The user is able to update their account information; username, email, password and he/she is also able to delete his/her account.
+- The user is able to update their account information; username, password and he/she is also able to delete his/her account.
 
 # usage
 
