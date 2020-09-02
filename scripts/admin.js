@@ -172,7 +172,7 @@ const deleteUser = event => {
         .doc(userid)
         .get()
         .then(doc => {
-            if (doc) {
+            if (doc.data()) {
                 console.log('retrieved user data successfully')                
                 database.collection('users')
                     .doc(doc.id)
