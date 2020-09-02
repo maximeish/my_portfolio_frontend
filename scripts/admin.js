@@ -1,14 +1,7 @@
 //admin board
 const tabTitles = document.querySelectorAll('#editor .tab-title');
 const tabPanels = document.querySelectorAll('#editor .tab-panel');
-
-// window.indexedDB.open('firebaseLocalStorageDb', 1)
-//     .then(db => {
-//         console.log(db)
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
+const idArray = [];
 
 const showPanel = (panelIndex, colorCode) => {
     tabTitles.forEach(node => {
@@ -172,7 +165,30 @@ const deleteMessage = event => {
 // delete message
 
 const deleteUser = event => {
-    console.log('not yet implemented')
+    console.log(`user id to delete ${idArray[parseInt(event.target.id.toString().split('_')[1])]}`);
+    let userid = idArray[parseInt(event.target.id.toString().split('_')[1])];
+    database
+        .collection('users')
+        .doc(userid)
+        .get()
+        .then(doc => {
+            if (doc) {
+                console.log('retrieved user data successfully')                
+                database.collection('users')
+                    .doc(doc.id)
+                    .delete()
+                    .then(() => {
+                        console.log('user deleted successfully')
+                    })
+                    .catch(err => {
+                        console.log("Error deleting user: ", err);
+                    })
+
+            } else {
+                console.log('cannot retrieve user with that id')
+            }
+        })
+        .catch(err => console.log('Error getting document: ', err));
 }
 
 
@@ -253,6 +269,9 @@ const getUsers = () => {
         .get()
         .then(docs => {
             docs.forEach(doc => {
+                idArray.push(doc.id);
+                // let identifier = doc.id.toString().split("@").join("___");
+                // let emailDomain = identifier.split("___")[1].toString().split('.').join("---");
                 document.querySelector('#users-count').innerHTML = parseInt(document.querySelector('#users-count').innerHTML) + 1;
                 const usersWrapper = document.querySelector('#users');
                 const row = document.createElement('tr');
@@ -260,10 +279,11 @@ const getUsers = () => {
                     <td>${doc.data().username}</td>
                     <td>${doc.id}</td>
                     <td>${doc.data().role}</td>
-                    <td><i id="a_${doc.id}" class="fa fa-trash fa-lg"></i></td>
+                    <td><i id="a_${idArray.indexOf(doc.id)}" class="fa fa-trash fa-lg"></i></td>
                 `;
                 usersWrapper.appendChild(row);
-                // document.querySelector(`#a_${doc.id}`).addEventListener('click', e => deleteUser(e));
+                console.log('try to read this property', doc.id)
+                document.querySelector(`#a_${idArray.indexOf(doc.id)}`).addEventListener('click', e => deleteUser(e));
             });
         })
         .catch(error => {

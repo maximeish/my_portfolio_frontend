@@ -37,23 +37,47 @@ function loginUsingGoogle() {
 
 //log in the user
 const login = (email, password, role) => {
-    firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(() => console.log('Login successful'))
-        .catch(err => {
-            // var errorCode = error.code;
-            const notif = document.querySelector('#notification');
-            notif.removeAttribute('hidden');
-            if (notif.style.animation) notif.style.animation = '';
-            notif.style.animation = 'notificationEffect 0.5s ease-in forwards';
-            notif.style.display = 'block';
-            notif.innerHTML = err.message;
-            notif.style.background = 'rgba(255, 0, 0, 0.5)';
-            ['#email', '#password'].forEach(val => {
-                document.querySelector(val).addEventListener('change', () => onInputChange());
-            });
-        });
+    database.collection('users')
+            .doc(email)
+            .get()
+            .then(doc => {
+                if (doc.data()) {
+                    console.log('got this doc.data()', doc.data())
+                    console.log('logging in...');
+                    firebase
+                        .auth()
+                        .signInWithEmailAndPassword(email, password)
+                        .then(() => console.log('Login successful'))
+                        .catch(err => {
+                            // var errorCode = error.code;
+                            const notif = document.querySelector('#notification');
+                            notif.removeAttribute('hidden');
+                            if (notif.style.animation) notif.style.animation = '';
+                            notif.style.animation = 'notificationEffect 0.5s ease-in forwards';
+                            notif.style.display = 'block';
+                            notif.innerHTML = err.message;
+                            notif.style.background = 'rgba(255, 0, 0, 0.5)';
+                            ['#email', '#password'].forEach(val => {
+                                document.querySelector(val).addEventListener('change', () => {
+                                    notif.style.display = 'none';
+                                });
+                            });
+                        });
+                } else {
+                    const notif = document.querySelector('#notification');
+                    notif.removeAttribute('hidden');
+                    if (notif.style.animation) notif.style.animation = '';
+                    notif.style.animation = 'notificationEffect 0.5s ease-in forwards';
+                    notif.style.display = 'block';
+                    notif.innerHTML = "Cannot find a user with that email / password combination";
+                    notif.style.background = 'rgba(255, 0, 0, 0.5)';
+                    ['#email', '#password'].forEach(val => {
+                        document.querySelector(val).addEventListener('change', () => {
+                            notif.style.display = 'none';
+                        });
+                    });
+                }
+            })
 }
 
 
