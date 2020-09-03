@@ -105,6 +105,8 @@
 }
 
 #see-more a {
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     color: #222222;
     padding: 10px;
@@ -112,6 +114,10 @@
     border-radius: 10px;
     margin-bottom: 0;
     transition: all 0.3s ease-in-out;
+}
+
+#see .fa {
+    font-size: 16px !important;
 }
 
 #see-more a:hover {
