@@ -26,7 +26,7 @@ database
             div.innerHTML = `
                 <div class="image-preview" id="${imgID}"></div>
                 <h2>${doc.data().title}</h2>
-                <span>Posted on ${first.join(" ") + " at " + second.join(":")} by Maxime I.</span>
+                <span>${first.join(" ") + " at " + second.join(":")} by Maxime I.</span>
                 <p>${doc.data().paragraphs.toString().split(' ').splice(0, 10).join(' ')}...</p>
                 <a href="./post.html?docID=${doc.id}&userEmail=${globalUser.email || null}">Read more</a>
             `;
