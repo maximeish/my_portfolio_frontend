@@ -98,8 +98,15 @@ database
         title = doc.data().title;
         document.querySelector('title').innerHTML = title;
         paragraphs = doc.data().paragraphs;
-        date_posted = doc.data().date_posted;
-        display_date = date_posted.toString().split('T')[0] + ' at ' + date_posted.toString().split('T')[1];
+        
+        const date = doc.data().date_posted;
+        const first = date.toDate().toString().split(' ').slice(0, 4);
+        first[0] = first[0] + ",";
+        let second = date.toDate().toString().split(' ').slice(4, 5);
+        second = second.toString().split(':');
+        second.splice(2, 1);
+
+        display_date = first.join(" ") + " at " + second.join(":");
         imagePath = doc.data().imageFilename;
         imageRef = storageRef.child(imagePath);
 

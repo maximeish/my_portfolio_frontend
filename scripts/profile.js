@@ -20,6 +20,7 @@ firebase.auth().onAuthStateChanged(user => {
                 if (doc) {
                     document.querySelector('#notif-status').style.display = 'none';
                     document.querySelector('#curr-username strong').innerHTML = doc.data().username;
+                    document.querySelector('title').innerHTML += ` | ${doc.data().username}`;
                     document.querySelector('#curr-username').style.display = 'block';
                     document.querySelector('#curr-email strong').innerHTML = user.email;
                     document.querySelector('#curr-email').style.display = 'block';
