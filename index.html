@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maxime Ishimwe | Junior Full-stack Web Developer</title>
+    <title>Maxime Ishimwe | Junior Full-stack Web Developer | Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/contact.css" />
@@ -20,6 +20,7 @@
     <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
     <script defer src="./scripts/init-firebase.js"></script>
     <script defer src="./scripts/app.js"></script>
+    <script defer src="../scripts/messages.js"></script>
 </head>
 <body>
     <main class="wrapper">
@@ -48,7 +49,7 @@
                 Junior Full-stack Web Developer & Tech Enthusiast
             </div>
             <div class="description">
-                On my way to becoming a remarkable software developer
+                On my way to becoming a remarkable full-stack developer
                 specialized also in mobile and desktop app development
             </div>
             <div class="profile">
@@ -60,7 +61,7 @@
         <section id="about-me">
             <div>
                 <h2>About Me</h2>
-                <p>My name is Maxime Ishimwe, I'm an enthusiastic web
+                <p>I'm Maxime Ishimwe, an enthusiastic web
                     developer eager to contribute to team success through hard work,
                     attention to detail and good organizational skills. 
                     Motivated to learn, grow and excel in the Software Development
@@ -71,12 +72,12 @@
         
         <section id="skills">
             <div class="intro">
-                <h2 class="intro-header">Hello there! I’m glad you’re here.</h2>
-                <p class="intro-desc">Little more about myself, I’m a junior full-stack web developer with currently
-                    a few projects  that I’ve worked on, using PHP as a back-end language 
-                    and several other languages to the front-end. 
-                    I always seek to improve myself and
-                    learn new concepts and skills when it comes to software development.</p>
+                <h2 class="intro-header">I’m glad you’re here.</h2>
+                <p class="intro-desc">Little more about myself, as a junior full-stack web developer with currently
+                    a few projects that I worked on using PHP on the back-end 
+                    and mostly React and bootstrap on the front-end,
+                    I always seek to improve myself by
+                    learning new concepts and skills when it comes to software development.</p>
             </div>
             <div class="skills-table">
                 <div>
@@ -88,7 +89,7 @@
                     <h3 id="subtitle1">Languages I use</h3>
                     <ul id="list1">
                         <li>SQL</li>
-                        <li>noSQL</li>
+                        <li style="opacity: 0.5;">noSQL</li>
                     </ul>
                     <h3 id="subtitle2">Dev Tools & Databases</h3>
                     <ul id="list2">
@@ -104,12 +105,11 @@
                 <div>
                     <span id="icon"><i class="fa fa-gear"></i></span>
                     <h2 id="big-title">Back-end Developer</h2>
-                    <p id="small-desc">I mostly use PHP but
-                        I’m currently learning Express.js web framework for Node.js</p>
+                    <p id="small-desc">I use Express.js web framework for Node.js and PHP</p>
                     <h3 id="subtitle1">Frameworks & Languages I use</h3>
                     <ul id="list1">
-                        <li>PHP</li>
                         <li>Express.js</li>
+                        <li>PHP</li>
                     </ul>
                     <h3 id="subtitle2">Dev Tools</h3>
                     <ul id="list2">
@@ -121,13 +121,13 @@
                 <div>
                     <span id="icon"><i class="fa fa-code" aria-hidden="true"></i></span>
                     <h2 id="big-title">Front-end Developer</h2>
-                    <p id="small-desc">I work hard towards having a nicely laid out professional-looking UI, designed and built using modern tools</p>
+                    <p id="small-desc">I work hard towards having a nicely laid out UI, designed and built using modern tools</p>
                     <h3 id="subtitle1">Languages & Frameworks I use</h3>
                     <ul id="list1">
                         <li>HTML5</li>
                         <li>CSS3 (With Sass)</li>
                         <li>Bootstrap</li>
-                        <li>JavaScript (With ES2015+)</li>
+                        <li>JavaScript (with ES6 and newer versions)</li>
                         <li>jQuery</li>
                         <li>React</li>
                     </ul>
@@ -172,7 +172,48 @@
         <section id="contact">
             
             <div class="form-wrapper">
-                <a class="contact-btn" href="./pages/contact.html"><i style="font-size: 1em !important; padding: 0px; border:none" class="fa fa-send-o"></i> Contact Me</a>
+                <div>
+                    <header class="contact-header">
+                        <div class="big-title">Interested in working together?</div>
+                        <div class="small-title">Let's talk...</div>
+                    </header>
+                    
+                    <div id="alert-success">
+                        Thanks for your message. <br>
+                        <span>I'll be in touch with you soon</span>
+                    </div>
+
+                    <div id="alert-fail">
+                        The name should not contain numbers
+                    </div>
+
+                    
+                    <form id="contact-form" class="form-container">
+                        <div class="name-field">
+                            <label class="field-text" for="name">Full names</label><br>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        
+                        <div class="email-field">
+                            <label class="field-text" for="email">Email</label><br>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        
+                        <div class="phone-field">
+                            <label  class="field-text" for="phone">Telephone <span>(optional)</span></label><br>
+                            <input type="tel" name="phone" id="phone" />
+                        </div>
+
+                        <div class="message-field">
+                            <label class="field-text" for="message">Message</label><br>
+                            <textarea rows="3" cols="45" name="message" id="message" required></textarea>
+                        </div>
+
+                        <div class="submit-btn-field">
+                            <button id="submit-btn" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
 
