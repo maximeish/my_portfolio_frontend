@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/admin.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/admin.js"></script>
+    <script defer src="../scripts/admin-auth.js"></script>
+</head>
+<body>
+    
+    <main class="wrapper">
+        <header>
+            <div>
+                <a href="./blog.html">
+                    <img src="../assets/logo/logo.svg" class="logo" />
+                </a>
+            </div>
+            <div>Admin Dashboard</div>
+        </header>
+        <section class="dashboard-grid">
+            <div>
+                <div id="status">
+                    <h2>Portfolio Status</h2>
+                    <div>
+                        <div>
+                            <div class="icon"><i class="fa fa-newspaper-o fa-lg"></i></div>
+                            <div>
+                                <div>Posts</div>
+                                <div id="posts-count">0</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="icon"><i class="fa fa-envelope fa-lg"></i></div>
+                            <div>
+                                <div>Messages</div>
+                                <div id="messages-count">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#editor" class="admin-tools">Admin Tools <i class="fa fa-arrow-circle-down fa-lg"></i></a>
+            </div>
+
+            <div id="editor">
+                <div class="tabs-wrapper">
+                    <div onclick="showPanel(0, '#837DD6')" class="tab-title">Posts</div>
+                    <div onclick="showPanel(1, '#837DD6')" class="tab-title">Messages</div>
+                    <div onclick="showPanel(2, '#837DD6')" class="tab-title">Add Post</div>
+                    <div onclick="showPanel(3, '#837DD6')" class="tab-title">Users (<span id="users-count">0</span>)</div>
+                </div>
+
+                <div id="blog-posts" class="tab-panel"></div>
+                <div style="text-align: left;" class="tab-panel">
+                    <table class="mobile-view-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Message</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="messages">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div id="post-creator" class="tab-panel">
+                    <form id="post-creatorForm" method="POST">
+                        <div class="title-image-fields">
+                            <div>Title</div><div><input type="text" name="title" id="title" required></div>
+                            <div>Image</div><div><input type="file" name="image" id="image" required></div>
+                        </div>
+                        <div>Body</div><div><textarea style="height: 70vh;" type="text" name="paragraphs" id="paragraphs" required></textarea></div>
+                        <div><button class="post-btn">Post</button></div>
+                    </form>
+                </div>
+                <div style="text-align: left;" id="user-manager" class="tab-panel">
+                    <table class="mobile-view-table">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

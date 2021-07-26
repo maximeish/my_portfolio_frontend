@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/profile.js"></script>
+</head>
+<body>
+    <main class="wrapper">
+        <header id="header">
+            <div>
+                <a href="./blog.html">
+                    <img src="../assets/logo/logo.svg" class="logo" />
+                </a>
+            </div>
+            <div>User Profile Settings</div>
+        </header>
+
+        <section class="settings">
+            <div>
+                <div id="notif-status">Loading data. Please wait...</div>
+                <div id="curr-username">Current username: <strong></strong></div>
+                <div id="curr-email">Current email: <strong></strong></div>
+                <form id="update-form">
+                    <input id="new_username" type="text" name="new_username" placeholder="New Username" /><br>
+                    <!-- <input id="new_email" type="email" name="new_email" placeholder="New Email" /><br> -->
+                    <input id="new_password" type="password" name="new_password" placeholder="New Password" /><br>
+                    <input id="current_password" type="password" name="current_password" placeholder="Current Password" /><br>
+                    <h3>You need to provide your <mark>Current password</mark> in order to make any of these changes</h3>
+                    <button type="submit" id="update">Update Data</button>
+                </form>
+                <button id="delete-account">Delete your account</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,402 @@
+/* Containers section */
+
+#about-me {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background: #fefefe;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#alert-success {
+    opacity: 0;
+    display: none;
+    word-spacing: 3px;
+    padding: 15px;
+    font-size: large;
+    background: #40A940;
+    color: white;
+    margin: 1.2em auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#alert-fail {
+    opacity: 0;
+    display: none;
+    word-spacing: 3px;
+    padding: 15px;
+    font-size: large;
+    background: rgba(255, 0, 0, 0.5);
+    color: white;
+    margin: 1.2em auto;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#alert-success span {
+    opacity: 0.9;
+    font-size: small;
+}
+
+.form-wrapper {
+    /* border: 2px solid red; */
+    height: 95%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-container {
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "name email phone"
+    "message message message"
+    ". submit .";
+    grid-row-gap: 3em;
+    grid-column-gap: 2em;
+}
+
+/* End of containers section */
+
+
+.contact-header div {
+    text-align: center;
+}
+
+.contact-header .big-title {
+    font-size: 40px;
+    font-weight: medium;
+    opacity: 0.85;
+}
+
+.contact-header .small-title {
+    font-size: 20px;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.field-text {
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+label[for=phone] span {
+    font-size: small;
+    opacity: 0.5;
+}
+
+input, textarea {
+    outline:none;
+    border-radius: 3px;
+    border: 1px solid #6860d4c0;
+    width: 90%;
+    margin-top: 15px;
+    padding: 5px 5px;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 10px #6860d44f;
+}
+
+.text-muted {
+    opacity: 0.5;
+    font-size: 25px;
+}
+
+.form-wrapper > div:first-child {
+    /* border: 2px solid yellow; */
+    width: 100%;
+}
+
+#about-me h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#about-me > div {
+    background: #6860d42c;
+    width: 65%;
+    border-radius: 5px;
+	padding: 40px;
+	border: 1px solid grey;
+    box-shadow: 0px 2px 10px darkgray;
+    line-height: 1.5em;
+	letter-spacing: 1px;
+	font-size: x-large;
+}
+
+.name-field {
+    grid-area: name;
+}
+
+.email-field {
+    grid-area: email;
+}
+
+.phone-field {
+    grid-area: phone;
+}
+
+.message-field {
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid blue; */
+    grid-area: message;
+}
+
+.submit-btn-field {
+    display: flex;
+    justify-content: center;
+    grid-area: submit;
+}
+
+#message {
+    width: 97%;
+}
+
+button[type=submit] {
+    margin-top: 20px;
+    align-self: center;
+    background: #fefefe;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #6860d44f;
+    font-size: x-large;
+    padding: 8px 20px;
+    border-radius: 5em;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    box-shadow: 0 0 15px #776ef17a;
+    background: #7510F7;
+    border: 1px solid #5350839d;
+    color: #fefefe;
+}
+
+.form-wrapper div:first-child h1 {
+    opacity: 0.7;
+    font-size: 48px;
+}
+
+.links-section {
+    background: #7510F7;
+    color: white !important;
+    /* border-top: 2px solid rgba(0, 0, 0, 0.5); */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.links-section > header {
+    /* font-weight: normal; */
+    margin: 1.8em auto 1em auto;
+    text-align: center;
+    font-size: large;
+    flex-basis: 100%;
+}
+
+.links-section div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* border: 1px solid red; */
+    padding: 10px;
+}
+
+.links-section a {
+    text-decoration: none;
+    color: white;
+}
+
+.fa {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #7510F7;
+    border-width: thick;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    transition: all 0.3s ease-in-out; 
+}
+
+.fa:hover {
+    border-color: #fefefe;
+}
+
+
+.contact-btn {
+    text-decoration: none;
+    background: #fefefe;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #6860d44f;
+    font-size: x-large;
+    padding: 8px 20px;
+    border-radius: 5em;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    box-shadow: 0 0 15px #776ef17a;
+    background: #7510F7;
+    border: 1px solid #5350839d;
+    color: #fefefe;   
+}
+
+@media (max-width: 962px) {
+    .links-section {
+        padding-bottom: 10px;
+    }
+
+    .links-section header{
+        /* border: 1px solid red; */
+        margin-top: 15px;
+    }
+
+    input {
+        font-size: large;
+    }
+
+    .contact-header .big-title {
+        padding-top: 10px;
+        font-size: 20px;
+    }
+
+    button[type=submit] {
+        font-size: large;
+        margin-top: 10px;
+        padding: 5px 0;
+        padding: 10px 20px;
+    }
+
+    .links-section div a {
+        display: block;
+    }
+
+    .links-section div {
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .no-disp {
+        display: none;
+    }
+
+    .fa {
+        padding-bottom: 0px;
+        border: none;
+        transform: scale(1.1);
+    }
+
+    .fa:hover {
+        transform: scale(1.4);
+    }
+}
+
+@media (max-width: 880px) {
+    #about-me > div {
+        width: 80%;
+        font-size: larger;
+    }
+    .links-section > header {
+        font-size: large;
+    }
+}
+
+@media (max-width: 835px) {
+    .form-wrapper {
+        width: 90%;
+    }
+
+    .form-container {
+        /* border: 1px solid red; */
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto repeat(auto, 5);
+        grid-template-areas: 
+        "name"
+        "email"
+        "phone"
+        "message"
+        "submit";
+        grid-row-gap: 2em;
+        grid-column-gap: 0px;
+        justify-items: center;
+    }
+
+    .form-container div {
+        width: 80%;
+        /* border: 2px solid green; */
+    }
+
+    #alert-success {
+        width: 80%;
+    }
+
+    .field-text {
+        font-size: large;
+    }
+
+    input, #message {
+        margin-top: 0px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 662px) {
+    #about-me > div {
+        width: 80%;
+    }
+}
+
+@media (max-width: 647px) {
+    .contact-header .big-title {
+        font-size: large;
+    }
+
+    .contact-header .small-title {
+        font-size: small;
+    }
+
+    .links-section > header {
+        font-size: large;
+    }
+}
+
+@media (max-width: 525px) {
+    #about-me > div {
+        width: 90%;
+        font-size: large;
+    }
+}

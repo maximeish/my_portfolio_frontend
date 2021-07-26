@@ -1,0 +1,146 @@
+.wrapper {
+    height: 100vh;
+    background: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-wrapper {
+    padding: 0 3em;
+    border-radius: 35px;
+    background: white;
+    height: 95%;
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.signup-wrapper > div a {
+    text-decoration: none;
+}
+
+#notification {
+    opacity: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgrey;
+    display: none;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+}
+
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.signup-form > div {
+    /* flex: 1; */
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.signup-form label {
+    font-size: large;
+}
+
+.signup-form input {
+    margin-top: .2em;
+    font-size: large;
+    width: 100%;
+    border: 1px solid #4076FF;
+    padding: 0.3em 2px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.signup-form input:focus {
+    box-shadow: 0px 0px 6px #4076ff48;
+}
+
+.signup-form button {
+    margin: 15px 0 30px 0;
+    outline: none;
+    font-size: x-large;
+    color: #F9F9F9;
+    background: #655DCC;
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 20px;
+    box-shadow: none;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background: #776ef1;
+}
+
+.signup-wrapper hr {
+    width: 100%;
+}
+
+.signup-wrapper a {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.signup-wrapper a:hover {
+    color: #6860d4;
+}
+
+@media (max-width: 1060px) {
+    .signup-wrapper {
+        width: 60%;
+    }
+}
+
+@media (max-width: 665px) {
+    .signup-wrapper {
+        width: 65%;
+    }
+}
+
+@media (max-width: 500px) {
+    .signup-wrapper {
+        width: 85%;
+    }
+}
+
+@media (max-width: 400px) {
+    .signup-wrapper {
+        height: 100vh;
+        border-radius: 0px;
+        width: 100%;
+    }
+
+    .signup-wrapper p {
+        font-size: medium;
+    }
+
+    .signup-form input {
+        font-size: large;
+    }
+}
+
+@keyframes notificationEffect {
+    from {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Maxime Ishimwe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+    <main class="wrapper">
+        <nav class="navbar">
+            <a href="../"><img class="logo" src="../assets/logo/logo.svg" alt="logo" /></a>
+            <ul class="nav-links navbar-inactive no-overflow">
+                <li><a class="nav-link" href="../">My Portfolio</a></li>
+                <li><a class="nav-link" href="../#projects">My Projects</a></li>
+                <li><a class="nav-link" href="../#contact">Send Me a Message</a></li>
+                <li id="auth-logout"><a id="auth-signup" class="nav-link" href="./signup.html">Sign up</a></li>
+                <li id="admin-link"><a href="admin.html"><i class="fa fa-user"></i>&nbsp;Admin&nbsp;Page</a></li>
+                <li id="user-settings"><a href="user-settings.html"><i class="fa fa-gear fa-lg"></i></a></li>
+            </ul>
+            <div class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+        <section class="main-section">
+            <div class="blog-column">
+                <h1>Welcome to My Blog!</h1>
+
+                <p id="welcome-msg">to view and comment on all my posts, it’s as simply as <a href="./login.html" class="link-header">logging in</a> if
+                    you’ve created an account before, or click <a href="./signup.html" class="link-header">Sign Up</a> to create one</p>
+                
+                <div class="posts-wrapper">
+                    <h2>Here are some of my posts...</h2>
+                </div>
+            </div>
+            
+            <div class="links-container blog-column">
+                <a class="signup-btn" href="./signup.html">Sign&nbsp;up</a>
+                <span class="or-txt">or</span>
+                <a class="login-btn" href="./login.html">Log&nbsp;in</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div><a href="../#about-me">About Me</a></div>
+            <div><span class="copyright">COPYRIGHT &copy; 2020</span></div>
+        </footer>
+    </main>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    
+    <script src="../scripts/init-firebase.js"></script>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/blog-auth.js"></script>
+</body>
+</html>

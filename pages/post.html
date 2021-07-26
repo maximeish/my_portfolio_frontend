@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading post...</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/skills.css" />
+    <link rel="stylesheet" href="../css/projects.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/app.js"></script>
+    <script defer src="../scripts/post.js"></script>
+
+</head>
+<body>
+    <main class="wrapper" style="overflow-x: hidden;">
+        <nav class="navbar" style="overflow-x: hidden;">
+            <div class="logo">
+                <a href="../"><img src="../assets/logo/logo.svg" alt="logo" /></a>
+            </div>
+            
+            <ul class="nav-links no-overflow">
+                <li><a class="nav-link" href="../">My Portfolio</a></li>
+                <li><a class="nav-link" href="../#contact">Send Me a Message</a></li>
+                <li id="auth-logout"><a class="nav-link signup-btn" href="../pages/signup.html">Sign up</a></li>
+                <li id="login-auth-logout"><a class="nav-link login-btn" href="../pages/login.html">Log in</a></li>
+                <li id="admin-link"><a href="admin.html"><i id="auth-resets" class="fa fa-user"></i>&nbsp;Admin&nbsp;Page</a></li>
+            </ul>
+            <div class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+
+        <section id="post-wrapper">
+            <header id="headline">
+                <h1 id="title"></h1>
+                <p id="date-posted"></p>
+            </header>
+            <div id="image"></div>
+            <div id="paragraphs"></div>
+            <div id="comment">
+                <form id="comment-editor">
+                    <div>Leave a comment</div>
+                    <textarea name="user-comment" id="user-comment"></textarea>
+                    <div class="submit-comment">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div id="users-comments">
+                <h2>Recent Comments</h2>
+                <hr>
+                <div class="comment-grid">
+                    <div class="user-image">
+                        <img src="../assets/img/user-pictures/user.png" alt="Guest">
+                    </div>
+                    <div class="user-name">Guest</div>
+                    <div class="user-comment">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="date-posted">March 20th, 2020</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

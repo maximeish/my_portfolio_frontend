@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Maxime Ishimwe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/app.js"></script>
+</head>
+<body>
+    <main class="wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../assets/logo/logo.svg" alt="logo" />
+            </div>
+            
+            <!-- Mobile view -->
+            <ul class="nav-links no-overflow">
+                <li><a class="nav-link" href="../">My Portfolio</a></li>
+                <li><a class="nav-link" href="../#projects">My Projects</a></li>
+                <li><a class="nav-link current-page" href="./#">Send Me a Message</a></li>
+                <li><a class="nav-link" href="./blog.html">My Blog</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+        <section id="contact">
+            <div class="form-wrapper">
+                <div>
+                    <header class="contact-header">
+                        <div class="big-title">Interested in working together?</div>
+                        <div class="small-title">Let's talk...</div>
+                    </header>
+                    
+                    <div id="alert-success">
+                        Thanks for your message. <br>
+                        <span>I'll be in touch with you soon</span>
+                    </div>
+
+                    <div id="alert-fail">
+                        The name should not contain numbers
+                    </div>
+
+                    
+                    <form id="contact-form" class="form-container">
+                        <div class="name-field">
+                            <label class="field-text" for="name">Full names</label><br>
+                            <input type="text" name="name" id="name" required />
+                        </div>
+                        
+                        <div class="email-field">
+                            <label class="field-text" for="email">Email</label><br>
+                            <input type="email" name="email" id="email" required />
+                        </div>
+                        
+                        <div class="phone-field">
+                            <label  class="field-text" for="phone">Telephone <span>(optional)</span></label><br>
+                            <input type="tel" name="phone" id="phone" />
+                        </div>
+
+                        <div class="message-field">
+                            <label class="field-text" for="message">Message</label><br>
+                            <textarea rows="3" cols="45" name="message" id="message" required></textarea>
+                        </div>
+
+                        <div class="submit-btn-field">
+                            <button id="submit-btn" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="links-section">
+                <header>You can also reach out to me via...</header>
+                <div><a href="https://twitter.com/maximeish"><i class="fa fa-twitter fa-lg"><span class="no-disp"> Twitter</span></i></a></div>
+                <div><a href="https://linkedin.com/in/maximeish"><i class="fa fa-linkedin fa-lg"><span class="no-disp"> Linkedin</span></i></a></div>
+                <div><a title="mxmishimwe5@gmail.com" href="mailto:mxmishimwe5@gmail.com"><i class="fa fa-envelope fa-lg"><span class="no-disp"> Email</span></i></a></div>
+                <div><a href="https://facebook.com/mqm111"><i class="fa fa-facebook fa-lg"><span class="no-disp"> Facebook</span></i></a></div>
+                <div><a href="https://wa.me/+250787720495"><i class="fa fa-whatsapp fa-lg"><span class="no-disp"> WhatsApp</span></i></a></div>
+                <div><a title="+250787720495" href="tel:+250787720495"><i class="fa fa-phone fa-lg"><span class="no-disp"> Phone</span></i></a></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

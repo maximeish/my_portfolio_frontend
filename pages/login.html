@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in to Your Account | Maxime's Blog</title>
+    
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+    <script defer src="../scripts/init-firebase.js"></script>
+    <script defer src="../scripts/auth.js"></script>
+    <script defer src="../scripts/login.js"></script>
+</head>
+<body>
+    <main class="wrapper">
+        <section class="login-wrapper">
+            <div>
+                <a href="../">
+                    <img src="../assets/logo/logo.svg" />
+                </a>
+            </div>
+            <form class="login-form" action="#" method="POST">
+                <div id="notification"></div>
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" required/>
+                </div>
+                <div>
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" required/>
+                </div>
+
+                <button id="login-btn" type="submit">Login</button>
+                <button id="login-google-btn"><i class="fa fa-google fa-lg"></i> Login with Google</button>
+            </form>
+            
+            <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+        </section>
+    </main>
+</body>
+</html>
