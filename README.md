@@ -1,8 +1,8 @@
-# mybrand - maxime
+# My Portfolio - Maxime Ishimwe
 
 A repository for my brand website
 
-# a blog and a portfolio (all features not fully implemented)
+# The portfolio includes a blog as well (all features not fully implemented yet)
 
 > Summary of what this does
 
