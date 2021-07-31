@@ -1,261 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maxime Ishimwe | Junior Full-stack Web Developer | Blog</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/contact.css" />
     <link rel="stylesheet" href="./css/skills.css" />
     <link rel="stylesheet" href="./css/projects.css" />
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script
-      defer
-      src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"
-    ></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script
-      defer
-      src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"
-    ></script>
-    <script
-      defer
-      src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"
-    ></script>
-    <script
-      defer
-      src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"
-    ></script>
-    <script
-      defer
-      src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"
-    ></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
     <script defer src="./scripts/init-firebase.js"></script>
     <script defer src="./scripts/app.js"></script>
     <script defer src="../scripts/messages.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <main class="wrapper">
-      <nav class="navbar">
-        <div class="logo">
-          <img src="./assets/logo/logo.ico" alt="logo" />
-        </div>
-
-        <!-- Mobile view -->
-        <ul class="nav-links no-overflow">
-          <li><a class="nav-link current-page" href="./#">My Portfolio</a></li>
-          <li><a class="nav-link" href="./#projects">My Projects</a></li>
-          <li><a class="nav-link" href="./#contact">Send Me a Message</a></li>
-          <li><a class="nav-link" href="./pages/blog.html">My Blog</a></li>
-        </ul>
-
-        <div class="burger">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
-      </nav>
-
-      <section class="main-section">
-        <div class="profile">
-          <img src="./assets/profile-picture.png" alt="Maxime's picture" />
-        </div>
-                <div class="large-header">
-          Hi, my name is Maxime Ishimwe
-        </div>
-        <div class="description">
-          I'm a Full-stack Developer and a UI/UX designer
-        </div>
-      </section>
-
-      <section id="about-me">
-        <div>
-          <h2>About Me</h2>
-          <p>
-            <p>I am an enthusiastic full-stack developer
-            with a strong will to contribute to team success through working
-             in Agile distributed teams (either remotely or on-site),
-            and attention to detail.</p> <br>
-            
-            <p>I took professional courses from Andela Technical Leadership Program in Software Engineering specializing in Full-stack web development.
-                I am also a self-taught mobile developer mainly using React Native.</p>
-          </p>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div class="intro">
-          <h2 class="intro-header">Thank you for visiting my profile</h2>
-          <p class="intro-desc">
-            Little more about myself, as a full-stack developer, I use Docker when needed in a project I'm working on. I always
-            seek to improve and expand my knowledge by learning new concepts and skills when
-            it comes to software development. 
-          </p>
-        </div>
-        <div class="skills-table">
-          <div>
-            <span id="icon"><i class="fa fa-database"></i></span>
-            <h2 id="big-title">Database Developer</h2>
-            <p id="small-desc">
-              I work hard to reduce data redundancy in a database I’m developing
-              to ensure data integrity
-            </p>
-            <h3 id="subtitle1">Types of database languages I mainly use</h3>
-            <ul id="list1">              
-              <li>noSQL</li>
-              <li>SQL</li>
-            </ul>
-            <h3 id="subtitle2">Databases I mainly work with</h3>
-            <ul id="list2">
-                            <li>MongoDB Atlas</li>
-                                          <li>PostgreSQL</li>
-<li>MySQL (with phpMyAdmin)</li>
-              <li>MariaDB</li>
-              <li style="opacity: 0.6"><strong>(...and others)</strong></li>
-              
-            </ul>
-          </div>
-          <div>
-            <span id="icon"><i class="fa fa-gear"></i></span>
-            <h2 id="big-title">Back-end Developer</h2>
-            <p id="small-desc">
-              Worked with Express.js web framework for Node.js and PHP
-            </p>
-            <h3 id="subtitle1">Frameworks & Languages I mainly use</h3>
-            <ul id="list1">
-              <li>Express.js</li>
-              <li>PHP</li>
-              <li style="opacity: 0.6"><strong>(...and others)</strong></li>
-            </ul>
-            <h3 id="subtitle2">Dev Tools I mainly use</h3>
-            <ul id="list2">
-              <li>Postman (for API testing)</li>
-              <li>Visual Studio Code</li>
-              <li style="opacity: 0.6"><strong>(...and others)</strong></li>
-            </ul>
-          </div>
-          <div>
-            <span id="icon"><i class="fa fa-code" aria-hidden="true"></i></span>
-            <h2 id="big-title">Front-end Developer</h2>
-            <p id="small-desc">
-              I work hard towards having a well laid out UI, designed and built
-              using appropriate tools
-            </p>
-            <h3 id="subtitle1">Frameworks & Languages I mainly use</h3>
-            <ul id="list1">
-              <li>HTML5</li>
-              <li>CSS3 (with Sass)</li>
-              <li>TailwindCSS</li>
-              <li>Bootstrap</li>
-              <li>Vanilla JavaScript (with ES6 and newer versions)</li>
-              <li>jQuery</li>
-              <li>React</li>
-              <li style="opacity: 0.6"><strong>(...and others)</strong></li>
-            </ul>
-            <h3 id="subtitle2">Dev Tools I mainly use</h3>
-            <ul id="list2">
-              <li>Figma</li>
-              <li>Visual Studio Code</li>
-              <li>Codepen</li>
-              <li style="opacity: 0.6"><strong>(...and others)</strong></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <header id="header">
-          <h2>My Recent Work</h2>
-          <p>Here are some web dev projects I’ve made...</p>
-        </header>
-        <div id="proj1">
-          <div><i class="fa fa-pencil"></i> QuizApp</div>
-          <div>
-            <a href="http://quizapp.byethost11.com/dev/">Visit Website</a>
-          </div>
-        </div>
-        <div id="proj2">
-          <div><i class="fa fa-lightbulb-o"></i> DevElectricalrw</div>
-          <div><a href="http://quizapp.byethost11.com/">Visit Website</a></div>
-        </div>
-        <div id="proj3">
-          <div><i class="fa fa-map-marker"></i> LocateMe</div>
-          <div><a href="#">Visit Website</a></div>
-        </div>
-        <div id="proj4">
-          <div><i class="fa fa-clock-o"></i> Simple Stopwatch</div>
-          <div><a href="#">Visit Website</a></div>
-        </div>
-        <div id="see-more">
-          <a href="./pages/projects.html"
-            >See more
-            <i style="font-size: 14px !important" class="fa fa-arrow-right"></i
-          ></a>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="form-wrapper">
-          <div>
-            <header class="contact-header">
-              <div class="big-title">Interested in working together?</div>
-              <div class="small-title">Let's talk...</div>
-            </header>
-
-            <div id="alert-success">
-              Thanks for your message. <br />
-              <span>I'll be in touch with you soon</span>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./assets/logo/logo.ico" alt="logo" />
             </div>
 
-            <div id="alert-fail">The name should not contain numbers</div>
+            <!-- Mobile view -->
+            <ul class="nav-links no-overflow">
+                <li><a class="nav-link current-page" href="./#">My Portfolio</a></li>
+                <li><a class="nav-link" href="./#projects">My Projects</a></li>
+                <li><a class="nav-link" href="./#contact">Send Me a Message</a></li>
+                <li><a class="nav-link" href="./pages/blog.html">My Blog</a></li>
+            </ul>
 
-            <form id="contact-form" class="form-container">
-              <div class="name-field">
-                <label class="field-text" for="name">Full names</label><br />
-                <input type="text" name="name" id="name" required />
-              </div>
+            <div class="burger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
 
-              <div class="email-field">
-                <label class="field-text" for="email">Email</label><br />
-                <input type="email" name="email" id="email" required />
-              </div>
+        <section class="main-section">
+            <div class="profile">
+                <img src="./assets/profile-picture.png" alt="Maxime's picture" />
+            </div>
+            <div class="large-header">
+                Hi, my name is Maxime Ishimwe
+            </div>
+            <div class="description">
+                I'm a Full-stack Developer and a UI/UX designer
+                <br><br>
+                <div><small style="opacity: 0.55; font-size: .65em;">(New portfolio UI coming soon...)</small></div>
+            </div>
+        </section>
 
-              <div class="phone-field">
-                <label class="field-text" for="phone"
-                  >Telephone <span>(optional)</span></label
+        <section id="about-me">
+            <div>
+                <h2>About Me</h2>
+                <p>
+                    <p>I am an enthusiastic full-stack developer with a strong will to contribute to team success through working in Agile distributed teams (either remotely or on-site), and attention to detail.</p> <br>
+
+                    <p>I took professional courses from Andela Technical Leadership Program in Software Engineering specializing in Full-stack web development. I am also a self-taught mobile developer mainly using React Native.</p>
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="intro">
+                <h2 class="intro-header">Thank you for visiting my profile</h2>
+                <p class="intro-desc">
+                    Little more about myself, as a full-stack developer, I use Docker when needed in a project I'm working on. I always seek to improve and expand my knowledge by learning new concepts and skills when it comes to software development.
+                </p>
+            </div>
+            <div class="skills-table">
+                <div>
+                    <span id="icon"><i class="fa fa-database"></i></span>
+                    <h2 id="big-title">Database Developer</h2>
+                    <p id="small-desc">
+                        I work hard to reduce data redundancy in a database I’m developing to ensure data integrity
+                    </p>
+                    <h3 id="subtitle1">Types of database languages I mainly use</h3>
+                    <ul id="list1">
+                        <li>noSQL</li>
+                        <li>SQL</li>
+                    </ul>
+                    <h3 id="subtitle2">Databases I mainly work with</h3>
+                    <ul id="list2">
+                        <li>MongoDB Atlas</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL (with phpMyAdmin)</li>
+                        <li>MariaDB</li>
+                        <li style="opacity: 0.6"><strong>(...and others)</strong></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <span id="icon"><i class="fa fa-gear"></i></span>
+                    <h2 id="big-title">Back-end Developer</h2>
+                    <p id="small-desc">
+                        Worked with Express.js web framework for Node.js and PHP
+                    </p>
+                    <h3 id="subtitle1">Frameworks & Languages I mainly use</h3>
+                    <ul id="list1">
+                        <li>Express.js</li>
+                        <li>PHP</li>
+                        <li style="opacity: 0.6"><strong>(...and others)</strong></li>
+                    </ul>
+                    <h3 id="subtitle2">Dev Tools I mainly use</h3>
+                    <ul id="list2">
+                        <li>Postman (for API testing)</li>
+                        <li>Visual Studio Code</li>
+                        <li style="opacity: 0.6"><strong>(...and others)</strong></li>
+                    </ul>
+                </div>
+                <div>
+                    <span id="icon"><i class="fa fa-code" aria-hidden="true"></i></span>
+                    <h2 id="big-title">Front-end Developer</h2>
+                    <p id="small-desc">
+                        I work hard towards having a well laid out UI, designed and built using appropriate tools
+                    </p>
+                    <h3 id="subtitle1">Frameworks & Languages I mainly use</h3>
+                    <ul id="list1">
+                        <li>HTML5</li>
+                        <li>CSS3 (with Sass)</li>
+                        <li>TailwindCSS</li>
+                        <li>Bootstrap</li>
+                        <li>Vanilla JavaScript (with ES6 and newer versions)</li>
+                        <li>jQuery</li>
+                        <li>React</li>
+                        <li style="opacity: 0.6"><strong>(...and others)</strong></li>
+                    </ul>
+                    <h3 id="subtitle2">Dev Tools I mainly use</h3>
+                    <ul id="list2">
+                        <li>Figma</li>
+                        <li>Visual Studio Code</li>
+                        <li>Codepen</li>
+                        <li style="opacity: 0.6"><strong>(...and others)</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <header id="header">
+                <h2>My Recent Work</h2>
+                <p>Here are some web dev projects I’ve made...</p>
+            </header>
+            <div id="proj1">
+                <div><i class="fa fa-pencil"></i> QuizApp</div>
+                <div>
+                    <a href="http://quizapp.byethost11.com/dev/">Visit Website</a>
+                </div>
+            </div>
+            <div id="proj2">
+                <div><i class="fa fa-lightbulb-o"></i> DevElectricalrw</div>
+                <div><a href="http://quizapp.byethost11.com/">Visit Website</a></div>
+            </div>
+            <div id="proj3">
+                <div><i class="fa fa-map-marker"></i> LocateMe</div>
+                <div><a href="#">Visit Website</a></div>
+            </div>
+            <div id="proj4">
+                <div><i class="fa fa-clock-o"></i> Simple Stopwatch</div>
+                <div><a href="#">Visit Website</a></div>
+            </div>
+            <div id="see-more">
+                <a href="./pages/projects.html">See more
+            <i style="font-size: 14px !important" class="fa fa-arrow-right"></i
+          ></a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="form-wrapper">
+                <div>
+                    <header class="contact-header">
+                        <div class="big-title">Interested in working together?</div>
+                        <div class="small-title">Let's talk...</div>
+                    </header>
+
+                    <div id="alert-success">
+                        Thanks for your message. <br />
+                        <span>I'll be in touch with you soon</span>
+                    </div>
+
+                    <div id="alert-fail">The name should not contain numbers</div>
+
+                    <form id="contact-form" class="form-container">
+                        <div class="name-field">
+                            <label class="field-text" for="name">Full names</label><br />
+                            <input type="text" name="name" id="name" required />
+                        </div>
+
+                        <div class="email-field">
+                            <label class="field-text" for="email">Email</label><br />
+                            <input type="email" name="email" id="email" required />
+                        </div>
+
+                        <div class="phone-field">
+                            <label class="field-text" for="phone">Telephone <span>(optional)</span></label
                 ><br />
                 <input type="tel" name="phone" id="phone" />
               </div>
 
               <div class="message-field">
                 <label class="field-text" for="message">Message</label><br />
-                <textarea
-                  rows="3"
-                  cols="45"
-                  name="message"
-                  id="message"
-                  required
-                ></textarea>
-              </div>
+                            <textarea rows="3" cols="45" name="message" id="message" required></textarea>
+                        </div>
 
-              <div class="submit-btn-field">
-                <button id="submit-btn" type="submit">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
+                        <div class="submit-btn-field">
+                            <button id="submit-btn" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-        <div class="links-section">
-          <header>You can also reach out to me via...</header>
-          <div>
-            <a href="https://twitter.com/maximeish"
-              ><i class="fa fa-twitter fa-lg"
+            <div class="links-section">
+                <header>You can also reach out to me via...</header>
+                <div>
+                    <a href="https://twitter.com/maximeish"><i class="fa fa-twitter fa-lg"
                 ><span class="no-disp"> Twitter</span></i
               ></a
             >
